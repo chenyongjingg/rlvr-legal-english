@@ -23,8 +23,8 @@ sari_doc = m10.sari_doc
 rich_readability = m10.rich_readability
 tokens = m10.tokens
 
-RESULTS = "/root/autodl-tmp/legal_english/results"
-DATA = "/root/autodl-tmp/legal_english/data"
+RESULTS = "/path/to/legal_english/results"
+DATA = "/path/to/legal_english/data"
 
 TAGS = ["G1", "G2", "G3", "G4", "G5", "G6", "A_full", "A_diff", "A_term",
         "A_copy", "A_faith", "A_fmt", "G6_pure", "G6_pure_s11", "M2", "ADV",

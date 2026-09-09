@@ -3,7 +3,7 @@
 # after round-3 completes, using the fixed 08_verifier_eval.py (.format bug fixed:
 # literal {{ }} in JUDGE_USR JSON example). Stage markers -> logs/round3b_stage.txt.
 set +e
-ROOT=/root/autodl-tmp/legal_english
+ROOT=/path/to/legal_english
 PY=/root/miniconda3/bin/python
 cd "$ROOT"
 mkdir -p logs

@@ -6,7 +6,7 @@
 # consistency check. Answers "does allowing more revision iterations help?"
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round7_stage.txt
 : > "$STAGE"

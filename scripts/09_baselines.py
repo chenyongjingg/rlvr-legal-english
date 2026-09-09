@@ -14,9 +14,9 @@ import numpy as np
 import torch
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
-RESULTS = "/root/autodl-tmp/legal_english/results"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
+RESULTS = "/path/to/legal_english/results"
 
 LEVEL_TARGET_FRE = {"beginner": 63.0, "intermediate": 45.0, "advanced": 26.0}
 W = {"fmt": 0.15, "diff": 0.20, "term": 0.15, "copy": 0.25, "faith": 0.25}

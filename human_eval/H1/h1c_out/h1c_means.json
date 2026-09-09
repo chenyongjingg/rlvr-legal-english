@@ -1,0 +1,112 @@
+{
+ "B2": {
+  "H": {
+   "difficulty": 2.191666666666667,
+   "faithfulness": 2.066666666666667,
+   "terminology": 2.7083333333333335,
+   "fluency": 1.975,
+   "overall": 1.875
+  },
+  "J": {
+   "difficulty": 2.45,
+   "faithfulness": 2.125,
+   "terminology": 2.475,
+   "fluency": 1.925,
+   "overall": 2.24375
+  },
+  "A": {
+   "diff": 0.3510124453003494,
+   "faith": 0.7138864135742188,
+   "term": 0.97,
+   "tot": 0.742758
+  }
+ },
+ "M2": {
+  "H": {
+   "difficulty": 3.3666666666666667,
+   "faithfulness": 3.1,
+   "terminology": 2.816666666666667,
+   "fluency": 3.025,
+   "overall": 2.7583333333333333
+  },
+  "J": {
+   "difficulty": 3.525,
+   "faithfulness": 4.175,
+   "terminology": 3.75,
+   "fluency": 4.25,
+   "overall": 3.925
+  },
+  "A": {
+   "diff": 0.29252176441038047,
+   "faith": 0.7908544921875,
+   "term": 0.97,
+   "tot": 0.761458
+  }
+ },
+ "FlanT5": {
+  "H": {
+   "difficulty": 3.275,
+   "faithfulness": 2.9833333333333334,
+   "terminology": 2.966666666666667,
+   "fluency": 3.316666666666667,
+   "overall": 2.8333333333333335
+  },
+  "J": {
+   "difficulty": 3.4,
+   "faithfulness": 3.875,
+   "terminology": 3.5,
+   "fluency": 4.475,
+   "overall": 3.8125
+  },
+  "A": {
+   "diff": 0.3340031842267128,
+   "faith": 0.8225204467773437,
+   "term": 0.98,
+   "tot": 0.8061440000000001
+  }
+ },
+ "BART": {
+  "H": {
+   "difficulty": 2.7416666666666667,
+   "faithfulness": 2.433333333333333,
+   "terminology": 2.6333333333333333,
+   "fluency": 2.9833333333333334,
+   "overall": 2.3
+  },
+  "J": {
+   "difficulty": 3.1,
+   "faithfulness": 3.15,
+   "terminology": 3.25,
+   "fluency": 4.275,
+   "overall": 3.44375
+  },
+  "A": {
+   "diff": 0.30762334608006475,
+   "faith": 0.6632932114601136,
+   "term": 1.0,
+   "tot": 0.7369910000000001
+  }
+ },
+ "G6": {
+  "H": {
+   "difficulty": 3.0083333333333333,
+   "faithfulness": 2.316666666666667,
+   "terminology": 2.308333333333333,
+   "fluency": 2.8833333333333333,
+   "overall": 2.091666666666667
+  },
+  "J": {
+   "difficulty": 3.025,
+   "faithfulness": 2.925,
+   "terminology": 2.85,
+   "fluency": 3.7,
+   "overall": 3.125
+  },
+  "A": {
+   "diff": 0.47539000514350155,
+   "faith": 0.8468223063151041,
+   "term": 0.9866666666666667,
+   "tot": 0.8525106666666666
+  }
+ }
+}

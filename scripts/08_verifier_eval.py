@@ -24,9 +24,9 @@ import numpy as np
 import torch
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
-RESULTS = "/root/autodl-tmp/legal_english/results"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
+RESULTS = "/path/to/legal_english/results"
 
 LEVEL_LABEL = {"beginner": "beginner", "intermediate": "intermediate",
                "advanced": "advanced"}
@@ -161,6 +161,13 @@ def main():
     print(f"judge: Qwen3-4B-Instruct-2507 loaded on {dev}", flush=True)
 
     agg = {}
+    e_path = os.path.join(RESULTS, "verifier_eval.json")
+    if os.path.isfile(e_path):
+        try:
+            agg = json.load(open(e_path, encoding="utf-8"))
+            print(f"[resume] seeded {len(agg)} tag(s) from {e_path}", flush=True)
+        except Exception:
+            agg = {}
     for tag in tags:
         rows = load_rows(tag)
         if not rows:
@@ -173,6 +180,14 @@ def main():
             continue
         print(f"{tag}: {len(rows)} valid rewrites to judge (skipped {n_pure} "
               f"pure-commentary)", flush=True)
+        op = os.path.join(RESULTS, f"verifier_{tag}.jsonl")
+        if tag in agg and os.path.isfile(op):
+            done = [json.loads(l) for l in open(op, encoding="utf-8")]
+            n_done = sum(1 for x in done if x.get("judge"))
+            if n_done >= len(rows):
+                print(f"{tag}: verifier_{tag}.jsonl already complete "
+                      f"({n_done}/{len(rows)}) -> skip (resume)", flush=True)
+                continue
         # collect judge scores (with retry)
         scored = []
         for r in rows:

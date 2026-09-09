@@ -3,13 +3,13 @@
 Legal English corpus & knowledge base builder v2 (LegalGraphRAG data layer).
 Sources: EUR-Lex XML (clean full text), Oyez (case references), Wex (legal dictionary).
 Output: source text snippets (150-300 words), term dictionary JSON, metadata manifest.
-Reusable on server: /root/autodl-tmp/legal_english/scripts/01_build_corpus.py
+Reusable on server: /path/to/legal_english/scripts/01_build_corpus.py
 """
 import os, sys, json, re, time, argparse
 import urllib.request
 import xml.etree.ElementTree as ET
 
-DATA = "/root/autodl-tmp/legal_english/data"
+DATA = "/path/to/legal_english/data"
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) research-crawler"}
 
 

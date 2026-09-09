@@ -5,7 +5,7 @@
 # are consistent with the honest tot/FRE reported elsewhere.
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round7_verify_stage.txt
 : > "$STAGE"

@@ -11,7 +11,7 @@ Three stacked lanes:
                     output passage via elbow arrows.
 
 Every figure value matches manuscript.md Methods 3.1-3.6 (verified 2026-08-16).
-Rendered at 300 dpi PNG + PDF into D:\\周老师\\paper\\figures\\.
+Rendered at 300 dpi PNG + PDF into the repository's figures/ directory.
 """
 import os
 import matplotlib
@@ -21,7 +21,8 @@ from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 plt.rcParams["font.family"] = "DejaVu Sans"
 
-FIGDIR = r"D:\周老师\paper\figures"
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repository root
+FIGDIR = os.path.join(_REPO, "figures")
 os.makedirs(FIGDIR, exist_ok=True)
 
 # ---- palette ---------------------------------------------------------------

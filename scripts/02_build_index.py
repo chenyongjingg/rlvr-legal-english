@@ -9,8 +9,8 @@ Outputs under data/: faiss.index, embeddings.npy, ids.json, graph.json, split.js
 import os, sys, json, argparse, pickle
 import numpy as np
 
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
 
 
 def main():

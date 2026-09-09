@@ -1,0 +1,968 @@
+{
+ "R1": {
+  "eur_190_beginner": {
+   "A": "B2",
+   "B": "BART",
+   "C": "Source",
+   "D": "FlanT5",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_190_intermediate": {
+   "A": "FlanT5",
+   "B": "Source",
+   "C": "M2",
+   "D": "B2",
+   "E": "G6",
+   "F": "BART"
+  },
+  "eur_055_beginner": {
+   "A": "M2",
+   "B": "G6",
+   "C": "B2",
+   "D": "Source",
+   "E": "BART",
+   "F": "FlanT5"
+  },
+  "eur_055_intermediate": {
+   "A": "G6",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "B2",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_266_beginner": {
+   "A": "G6",
+   "B": "BART",
+   "C": "B2",
+   "D": "FlanT5",
+   "E": "M2",
+   "F": "Source"
+  },
+  "eur_266_intermediate": {
+   "A": "FlanT5",
+   "B": "B2",
+   "C": "BART",
+   "D": "Source",
+   "E": "G6",
+   "F": "M2"
+  },
+  "eur_409_beginner": {
+   "A": "FlanT5",
+   "B": "G6",
+   "C": "M2",
+   "D": "Source",
+   "E": "BART",
+   "F": "B2"
+  },
+  "eur_409_intermediate": {
+   "A": "BART",
+   "B": "Source",
+   "C": "M2",
+   "D": "G6",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_026_beginner": {
+   "A": "BART",
+   "B": "M2",
+   "C": "G6",
+   "D": "Source",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_026_intermediate": {
+   "A": "Source",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "B2",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_031_beginner": {
+   "A": "G6",
+   "B": "B2",
+   "C": "M2",
+   "D": "BART",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_031_intermediate": {
+   "A": "M2",
+   "B": "BART",
+   "C": "G6",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "Source"
+  },
+  "eur_341_beginner": {
+   "A": "FlanT5",
+   "B": "B2",
+   "C": "Source",
+   "D": "BART",
+   "E": "G6",
+   "F": "M2"
+  },
+  "eur_341_intermediate": {
+   "A": "B2",
+   "B": "G6",
+   "C": "Source",
+   "D": "M2",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_044_beginner": {
+   "A": "Source",
+   "B": "BART",
+   "C": "M2",
+   "D": "G6",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_044_intermediate": {
+   "A": "M2",
+   "B": "G6",
+   "C": "FlanT5",
+   "D": "BART",
+   "E": "B2",
+   "F": "Source"
+  },
+  "eur_245_beginner": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "G6",
+   "E": "B2",
+   "F": "Source"
+  },
+  "eur_245_intermediate": {
+   "A": "Source",
+   "B": "FlanT5",
+   "C": "G6",
+   "D": "M2",
+   "E": "BART",
+   "F": "B2"
+  },
+  "eur_374_beginner": {
+   "A": "BART",
+   "B": "B2",
+   "C": "G6",
+   "D": "M2",
+   "E": "FlanT5",
+   "F": "Source"
+  },
+  "eur_374_intermediate": {
+   "A": "G6",
+   "B": "FlanT5",
+   "C": "Source",
+   "D": "BART",
+   "E": "M2",
+   "F": "B2"
+  },
+  "eur_421_beginner": {
+   "A": "G6",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "Source",
+   "E": "B2",
+   "F": "BART"
+  },
+  "eur_421_intermediate": {
+   "A": "B2",
+   "B": "BART",
+   "C": "M2",
+   "D": "Source",
+   "E": "FlanT5",
+   "F": "G6"
+  },
+  "eur_338_beginner": {
+   "A": "BART",
+   "B": "G6",
+   "C": "Source",
+   "D": "FlanT5",
+   "E": "B2",
+   "F": "M2"
+  },
+  "eur_338_intermediate": {
+   "A": "M2",
+   "B": "BART",
+   "C": "G6",
+   "D": "B2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_095_beginner": {
+   "A": "Source",
+   "B": "M2",
+   "C": "BART",
+   "D": "G6",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_095_intermediate": {
+   "A": "B2",
+   "B": "BART",
+   "C": "Source",
+   "D": "G6",
+   "E": "FlanT5",
+   "F": "M2"
+  },
+  "eur_021_beginner": {
+   "A": "BART",
+   "B": "G6",
+   "C": "B2",
+   "D": "M2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_021_intermediate": {
+   "A": "G6",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "B2",
+   "E": "M2",
+   "F": "Source"
+  },
+  "eur_036_beginner": {
+   "A": "FlanT5",
+   "B": "Source",
+   "C": "B2",
+   "D": "BART",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_036_intermediate": {
+   "A": "B2",
+   "B": "M2",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_290_beginner": {
+   "A": "G6",
+   "B": "BART",
+   "C": "M2",
+   "D": "Source",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_290_intermediate": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "B2",
+   "D": "Source",
+   "E": "G6",
+   "F": "BART"
+  },
+  "eur_285_beginner": {
+   "A": "G6",
+   "B": "Source",
+   "C": "M2",
+   "D": "FlanT5",
+   "E": "B2",
+   "F": "BART"
+  },
+  "eur_285_intermediate": {
+   "A": "M2",
+   "B": "Source",
+   "C": "FlanT5",
+   "D": "BART",
+   "E": "G6",
+   "F": "B2"
+  },
+  "eur_422_beginner": {
+   "A": "G6",
+   "B": "Source",
+   "C": "B2",
+   "D": "BART",
+   "E": "FlanT5",
+   "F": "M2"
+  },
+  "eur_422_intermediate": {
+   "A": "G6",
+   "B": "Source",
+   "C": "M2",
+   "D": "FlanT5",
+   "E": "BART",
+   "F": "B2"
+  },
+  "eur_046_beginner": {
+   "A": "G6",
+   "B": "BART",
+   "C": "FlanT5",
+   "D": "M2",
+   "E": "B2",
+   "F": "Source"
+  },
+  "eur_046_intermediate": {
+   "A": "B2",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "Source",
+   "E": "BART",
+   "F": "G6"
+  },
+  "eur_314_beginner": {
+   "A": "G6",
+   "B": "Source",
+   "C": "BART",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "M2"
+  },
+  "eur_314_intermediate": {
+   "A": "B2",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "Source",
+   "E": "M2",
+   "F": "G6"
+  }
+ },
+ "R2": {
+  "eur_190_beginner": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "G6",
+   "E": "B2",
+   "F": "Source"
+  },
+  "eur_190_intermediate": {
+   "A": "Source",
+   "B": "B2",
+   "C": "BART",
+   "D": "FlanT5",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_055_beginner": {
+   "A": "FlanT5",
+   "B": "G6",
+   "C": "BART",
+   "D": "B2",
+   "E": "M2",
+   "F": "Source"
+  },
+  "eur_055_intermediate": {
+   "A": "G6",
+   "B": "M2",
+   "C": "BART",
+   "D": "Source",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_266_beginner": {
+   "A": "B2",
+   "B": "G6",
+   "C": "M2",
+   "D": "BART",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_266_intermediate": {
+   "A": "BART",
+   "B": "G6",
+   "C": "FlanT5",
+   "D": "M2",
+   "E": "Source",
+   "F": "B2"
+  },
+  "eur_409_beginner": {
+   "A": "G6",
+   "B": "BART",
+   "C": "M2",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "Source"
+  },
+  "eur_409_intermediate": {
+   "A": "FlanT5",
+   "B": "B2",
+   "C": "M2",
+   "D": "G6",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_026_beginner": {
+   "A": "BART",
+   "B": "G6",
+   "C": "M2",
+   "D": "B2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_026_intermediate": {
+   "A": "Source",
+   "B": "B2",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "BART",
+   "F": "M2"
+  },
+  "eur_031_beginner": {
+   "A": "FlanT5",
+   "B": "G6",
+   "C": "M2",
+   "D": "BART",
+   "E": "Source",
+   "F": "B2"
+  },
+  "eur_031_intermediate": {
+   "A": "Source",
+   "B": "B2",
+   "C": "FlanT5",
+   "D": "BART",
+   "E": "G6",
+   "F": "M2"
+  },
+  "eur_341_beginner": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "B2",
+   "D": "Source",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_341_intermediate": {
+   "A": "B2",
+   "B": "M2",
+   "C": "G6",
+   "D": "FlanT5",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_044_beginner": {
+   "A": "BART",
+   "B": "G6",
+   "C": "M2",
+   "D": "B2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_044_intermediate": {
+   "A": "B2",
+   "B": "Source",
+   "C": "M2",
+   "D": "G6",
+   "E": "BART",
+   "F": "FlanT5"
+  },
+  "eur_245_beginner": {
+   "A": "B2",
+   "B": "M2",
+   "C": "BART",
+   "D": "Source",
+   "E": "FlanT5",
+   "F": "G6"
+  },
+  "eur_245_intermediate": {
+   "A": "B2",
+   "B": "M2",
+   "C": "Source",
+   "D": "G6",
+   "E": "BART",
+   "F": "FlanT5"
+  },
+  "eur_374_beginner": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "G6",
+   "E": "B2",
+   "F": "Source"
+  },
+  "eur_374_intermediate": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "G6",
+   "D": "B2",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_421_beginner": {
+   "A": "M2",
+   "B": "B2",
+   "C": "FlanT5",
+   "D": "BART",
+   "E": "G6",
+   "F": "Source"
+  },
+  "eur_421_intermediate": {
+   "A": "B2",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "M2",
+   "E": "G6",
+   "F": "Source"
+  },
+  "eur_338_beginner": {
+   "A": "G6",
+   "B": "BART",
+   "C": "M2",
+   "D": "FlanT5",
+   "E": "Source",
+   "F": "B2"
+  },
+  "eur_338_intermediate": {
+   "A": "BART",
+   "B": "M2",
+   "C": "B2",
+   "D": "G6",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_095_beginner": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "G6",
+   "E": "Source",
+   "F": "B2"
+  },
+  "eur_095_intermediate": {
+   "A": "M2",
+   "B": "Source",
+   "C": "G6",
+   "D": "FlanT5",
+   "E": "B2",
+   "F": "BART"
+  },
+  "eur_021_beginner": {
+   "A": "B2",
+   "B": "G6",
+   "C": "BART",
+   "D": "M2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_021_intermediate": {
+   "A": "G6",
+   "B": "BART",
+   "C": "B2",
+   "D": "Source",
+   "E": "M2",
+   "F": "FlanT5"
+  },
+  "eur_036_beginner": {
+   "A": "B2",
+   "B": "M2",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_036_intermediate": {
+   "A": "BART",
+   "B": "G6",
+   "C": "M2",
+   "D": "Source",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_290_beginner": {
+   "A": "M2",
+   "B": "BART",
+   "C": "B2",
+   "D": "G6",
+   "E": "FlanT5",
+   "F": "Source"
+  },
+  "eur_290_intermediate": {
+   "A": "FlanT5",
+   "B": "M2",
+   "C": "Source",
+   "D": "BART",
+   "E": "B2",
+   "F": "G6"
+  },
+  "eur_285_beginner": {
+   "A": "G6",
+   "B": "Source",
+   "C": "B2",
+   "D": "M2",
+   "E": "BART",
+   "F": "FlanT5"
+  },
+  "eur_285_intermediate": {
+   "A": "FlanT5",
+   "B": "M2",
+   "C": "Source",
+   "D": "BART",
+   "E": "G6",
+   "F": "B2"
+  },
+  "eur_422_beginner": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "G6",
+   "D": "B2",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_422_intermediate": {
+   "A": "Source",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "B2",
+   "E": "G6",
+   "F": "BART"
+  },
+  "eur_046_beginner": {
+   "A": "B2",
+   "B": "Source",
+   "C": "BART",
+   "D": "FlanT5",
+   "E": "M2",
+   "F": "G6"
+  },
+  "eur_046_intermediate": {
+   "A": "BART",
+   "B": "B2",
+   "C": "Source",
+   "D": "G6",
+   "E": "FlanT5",
+   "F": "M2"
+  },
+  "eur_314_beginner": {
+   "A": "BART",
+   "B": "Source",
+   "C": "M2",
+   "D": "FlanT5",
+   "E": "B2",
+   "F": "G6"
+  },
+  "eur_314_intermediate": {
+   "A": "FlanT5",
+   "B": "M2",
+   "C": "B2",
+   "D": "G6",
+   "E": "BART",
+   "F": "Source"
+  }
+ },
+ "R3": {
+  "eur_190_beginner": {
+   "A": "BART",
+   "B": "G6",
+   "C": "FlanT5",
+   "D": "B2",
+   "E": "M2",
+   "F": "Source"
+  },
+  "eur_190_intermediate": {
+   "A": "B2",
+   "B": "G6",
+   "C": "BART",
+   "D": "M2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_055_beginner": {
+   "A": "Source",
+   "B": "G6",
+   "C": "M2",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_055_intermediate": {
+   "A": "G6",
+   "B": "Source",
+   "C": "BART",
+   "D": "M2",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_266_beginner": {
+   "A": "FlanT5",
+   "B": "G6",
+   "C": "Source",
+   "D": "B2",
+   "E": "M2",
+   "F": "BART"
+  },
+  "eur_266_intermediate": {
+   "A": "G6",
+   "B": "B2",
+   "C": "M2",
+   "D": "BART",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_409_beginner": {
+   "A": "B2",
+   "B": "M2",
+   "C": "G6",
+   "D": "FlanT5",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_409_intermediate": {
+   "A": "M2",
+   "B": "B2",
+   "C": "G6",
+   "D": "FlanT5",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_026_beginner": {
+   "A": "Source",
+   "B": "FlanT5",
+   "C": "B2",
+   "D": "M2",
+   "E": "G6",
+   "F": "BART"
+  },
+  "eur_026_intermediate": {
+   "A": "M2",
+   "B": "Source",
+   "C": "FlanT5",
+   "D": "BART",
+   "E": "B2",
+   "F": "G6"
+  },
+  "eur_031_beginner": {
+   "A": "M2",
+   "B": "B2",
+   "C": "G6",
+   "D": "BART",
+   "E": "FlanT5",
+   "F": "Source"
+  },
+  "eur_031_intermediate": {
+   "A": "M2",
+   "B": "Source",
+   "C": "G6",
+   "D": "BART",
+   "E": "FlanT5",
+   "F": "B2"
+  },
+  "eur_341_beginner": {
+   "A": "Source",
+   "B": "BART",
+   "C": "M2",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "G6"
+  },
+  "eur_341_intermediate": {
+   "A": "Source",
+   "B": "M2",
+   "C": "G6",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_044_beginner": {
+   "A": "M2",
+   "B": "Source",
+   "C": "G6",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_044_intermediate": {
+   "A": "BART",
+   "B": "B2",
+   "C": "M2",
+   "D": "G6",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_245_beginner": {
+   "A": "B2",
+   "B": "Source",
+   "C": "G6",
+   "D": "FlanT5",
+   "E": "M2",
+   "F": "BART"
+  },
+  "eur_245_intermediate": {
+   "A": "B2",
+   "B": "M2",
+   "C": "BART",
+   "D": "FlanT5",
+   "E": "Source",
+   "F": "G6"
+  },
+  "eur_374_beginner": {
+   "A": "B2",
+   "B": "M2",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_374_intermediate": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "G6",
+   "D": "M2",
+   "E": "Source",
+   "F": "B2"
+  },
+  "eur_421_beginner": {
+   "A": "FlanT5",
+   "B": "M2",
+   "C": "BART",
+   "D": "Source",
+   "E": "G6",
+   "F": "B2"
+  },
+  "eur_421_intermediate": {
+   "A": "B2",
+   "B": "Source",
+   "C": "M2",
+   "D": "FlanT5",
+   "E": "G6",
+   "F": "BART"
+  },
+  "eur_338_beginner": {
+   "A": "BART",
+   "B": "Source",
+   "C": "M2",
+   "D": "G6",
+   "E": "B2",
+   "F": "FlanT5"
+  },
+  "eur_338_intermediate": {
+   "A": "M2",
+   "B": "G6",
+   "C": "Source",
+   "D": "FlanT5",
+   "E": "B2",
+   "F": "BART"
+  },
+  "eur_095_beginner": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "M2",
+   "D": "Source",
+   "E": "B2",
+   "F": "G6"
+  },
+  "eur_095_intermediate": {
+   "A": "FlanT5",
+   "B": "G6",
+   "C": "B2",
+   "D": "M2",
+   "E": "BART",
+   "F": "Source"
+  },
+  "eur_021_beginner": {
+   "A": "M2",
+   "B": "B2",
+   "C": "BART",
+   "D": "G6",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_021_intermediate": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "Source",
+   "D": "B2",
+   "E": "BART",
+   "F": "G6"
+  },
+  "eur_036_beginner": {
+   "A": "BART",
+   "B": "FlanT5",
+   "C": "B2",
+   "D": "G6",
+   "E": "Source",
+   "F": "M2"
+  },
+  "eur_036_intermediate": {
+   "A": "G6",
+   "B": "Source",
+   "C": "M2",
+   "D": "B2",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_290_beginner": {
+   "A": "B2",
+   "B": "G6",
+   "C": "M2",
+   "D": "Source",
+   "E": "BART",
+   "F": "FlanT5"
+  },
+  "eur_290_intermediate": {
+   "A": "G6",
+   "B": "M2",
+   "C": "BART",
+   "D": "B2",
+   "E": "Source",
+   "F": "FlanT5"
+  },
+  "eur_285_beginner": {
+   "A": "BART",
+   "B": "B2",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "Source",
+   "F": "M2"
+  },
+  "eur_285_intermediate": {
+   "A": "Source",
+   "B": "FlanT5",
+   "C": "BART",
+   "D": "M2",
+   "E": "G6",
+   "F": "B2"
+  },
+  "eur_422_beginner": {
+   "A": "Source",
+   "B": "BART",
+   "C": "FlanT5",
+   "D": "G6",
+   "E": "B2",
+   "F": "M2"
+  },
+  "eur_422_intermediate": {
+   "A": "M2",
+   "B": "FlanT5",
+   "C": "Source",
+   "D": "G6",
+   "E": "B2",
+   "F": "BART"
+  },
+  "eur_046_beginner": {
+   "A": "G6",
+   "B": "B2",
+   "C": "M2",
+   "D": "Source",
+   "E": "FlanT5",
+   "F": "BART"
+  },
+  "eur_046_intermediate": {
+   "A": "FlanT5",
+   "B": "B2",
+   "C": "M2",
+   "D": "G6",
+   "E": "Source",
+   "F": "BART"
+  },
+  "eur_314_beginner": {
+   "A": "BART",
+   "B": "Source",
+   "C": "G6",
+   "D": "M2",
+   "E": "FlanT5",
+   "F": "B2"
+  },
+  "eur_314_intermediate": {
+   "A": "Source",
+   "B": "G6",
+   "C": "FlanT5",
+   "D": "B2",
+   "E": "BART",
+   "F": "M2"
+  }
+ }
+}

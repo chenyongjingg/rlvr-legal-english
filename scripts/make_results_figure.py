@@ -12,8 +12,8 @@ Panel (b) Difficulty control: achieved Flesch reading ease per target level
 
 Values come from honest_table.json (the commentary-decontaminated re-scoring;
 falls back to the pre-honest literals only if that file is absent), so the
-figure is always consistent with the manuscript tables. Rendered at 300 dpi
-PNG + PDF into D:\\周老师\\paper\\figures\\.
+figure is always consistent with the manuscript tables.
+Rendered at 300 dpi PNG + PDF into the repository's figures/ directory.
 """
 import os
 import json
@@ -23,11 +23,12 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 plt.rcParams["font.family"] = "DejaVu Sans"
-FIGDIR = r"D:\周老师\paper\figures"
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repository root
+FIGDIR = os.path.join(_REPO, "figures")
 os.makedirs(FIGDIR, exist_ok=True)
 
 # official numbers: honest_table.json if present (Table 1 / Sec 4.3 honest)
-_ht = os.path.join(r"C:\Users\33378\aigc_wechat\results\legal", "honest_table.json")
+_ht = os.path.join(_REPO, "results", "honest_table.json")
 _h = json.load(open(_ht, encoding="utf-8")) if os.path.isfile(_ht) else None
 def _tot(tag):
     if _h and tag in _h.get("tags", {}):
@@ -91,16 +92,9 @@ ax1.grid(axis="y", linestyle=":", alpha=0.6, zorder=0)
 ax1.set_axisbelow(True)
 for spine in ["top", "right"]:
     ax1.spines[spine].set_visible(False)
-ax1.annotate("SFT without GRPO\ncollapses difficulty control",
-             xy=(4, 0.759), xytext=(4, 0.850),
-             fontsize=7.5, color="#C62828", ha="center",
-             arrowprops=dict(arrowstyle="-|>", color="#C62828", lw=1.0,
-                             shrinkA=2, shrinkB=2))
-ax1.annotate("RLVR restores\n(corrected framework)",
-             xy=(5, 0.800), xytext=(5.45, 0.895),
-             fontsize=7.5, color="#2E7D32", ha="center",
-             arrowprops=dict(arrowstyle="-|>", color="#2E7D32", lw=1.0,
-                             shrinkA=2, shrinkB=2))
+# The G5 collapse / G6 restore message is carried by the bar colour (red/green)
+# and stated verbatim in the Figure caption + Sec 4.2 text; in-plot call-out
+# boxes here overlapped the value labels, so they are intentionally omitted.
 
 # ------------------------------------------------ (b) difficulty -------------
 x2 = np.arange(len(LEVELS))
@@ -115,8 +109,8 @@ for i, lv in enumerate(LEVELS):
                 color="#FCE8E6", alpha=0.55, zorder=0)
     ax2.hlines(t, i - 0.25, i + 0.25, colors=C_TGT, linestyles="--",
                linewidths=1.4, zorder=4)
-    ax2.text(i, t + 1.5, f"target {t}", ha="center", fontsize=7.5,
-             color="#37474F", style="italic")
+    # per-bar "target NN" floating labels were redundant with the x-tick
+    # "(target)" annotation and overlapped the value labels -> omitted.
 for xi, (a, lv) in enumerate(zip(ach, LEVELS)):
     ax2.text(xi, a + 2.5, f"{a:.1f}", ha="center", fontsize=8.5, fontweight="bold")
 ax2.set_ylim(0, 100)
@@ -130,11 +124,8 @@ ax2.grid(axis="y", linestyle=":", alpha=0.6, zorder=0)
 ax2.set_axisbelow(True)
 for spine in ["top", "right"]:
     ax2.spines[spine].set_visible(False)
-ax2.annotate("all three levels inside band",
-             xy=(1.0, 25.9), xytext=(1.62, 55),
-             fontsize=7.5, color="#2E7D32", ha="center",
-             arrowprops=dict(arrowstyle="-|>", color="#2E7D32", lw=1.0,
-                             shrinkA=2, shrinkB=2))
+# "all levels inside band" annotation removed: it collided with the target
+# markers / value labels; the point is stated in the Figure caption.
 
 plt.tight_layout(pad=1.0)
 png = os.path.join(FIGDIR, "results_overview.png")
@@ -143,3 +134,29 @@ plt.savefig(png, dpi=300, bbox_inches="tight", facecolor="white")
 plt.savefig(pdf, bbox_inches="tight", facecolor="white")
 print("wrote", png)
 print("wrote", pdf)
+
+# ---- self-check: report any remaining overlapping text boxes (dev aid) ----
+fig.canvas.draw()
+_renderer = fig.canvas.get_renderer()
+_seen = set()
+_items = []
+for ax in (ax1, ax2):
+    for t in (list(ax.texts) + list(ax.get_xticklabels())
+              + list(ax.get_yticklabels())):
+        if id(t) in _seen or not isinstance(t, plt.Text) or not t.get_text().strip():
+            continue
+        _seen.add(id(t))
+        bb = t.get_window_extent(renderer=_renderer)
+        if bb.width > 0 and bb.height > 0:
+            _items.append((bb, "A" if ax is ax1 else "B", t.get_text().replace("\n", "|")))
+_over = 0
+for i in range(len(_items)):
+    for j in range(i + 1, len(_items)):
+        a, b = _items[i][0], _items[j][0]
+        ix = max(0, min(a.x1, b.x1) - max(a.x0, b.x0))
+        iy = max(0, min(a.y1, b.y1) - max(a.y0, b.y0))
+        if ix > 2 and iy > 2:
+            _over += 1
+            print("OVERLAP [%s/%s] %r <-> %r (ix=%.0f iy=%.0f)"
+                  % (_items[i][1], _items[j][1], _items[i][2], _items[j][2], ix, iy))
+print("text-overlap pairs: %d" % _over)

@@ -1,0 +1,62 @@
+{
+ "n_points": 240,
+ "difficulty": {
+  "n": 240,
+  "mean_pairwise_lin_kappa": 0.02666666666666667,
+  "pairs": {
+   "R1-R2": -0.021,
+   "R1-R3": -0.168,
+   "R2-R3": 0.269
+  },
+  "pct_3_raters_identical": 4.6
+ },
+ "faithfulness": {
+  "n": 240,
+  "mean_pairwise_lin_kappa": 0.112,
+  "pairs": {
+   "R1-R2": 0.058,
+   "R1-R3": 0.234,
+   "R2-R3": 0.044
+  },
+  "pct_3_raters_identical": 8.3
+ },
+ "terminology": {
+  "n": 240,
+  "mean_pairwise_lin_kappa": 0.07666666666666667,
+  "pairs": {
+   "R1-R2": -0.029,
+   "R1-R3": 0.125,
+   "R2-R3": 0.134
+  },
+  "pct_3_raters_identical": 5.0
+ },
+ "fluency": {
+  "n": 240,
+  "mean_pairwise_lin_kappa": 0.017333333333333336,
+  "pairs": {
+   "R1-R2": -0.093,
+   "R1-R3": 0.158,
+   "R2-R3": -0.013
+  },
+  "pct_3_raters_identical": 4.6
+ },
+ "overall": {
+  "n": 240,
+  "mean_pairwise_lin_kappa": 0.07933333333333334,
+  "pairs": {
+   "R1-R2": 0.028,
+   "R1-R3": 0.115,
+   "R2-R3": 0.095
+  },
+  "pct_3_raters_identical": 10.8
+ },
+ "valid_rewrite": {
+  "n": 240,
+  "mean_pairwise_cohen": -0.07466666666666667,
+  "pairs": [
+   0.0,
+   0.0,
+   -0.224
+  ]
+ }
+}

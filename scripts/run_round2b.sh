@@ -3,7 +3,7 @@
 # Fixes the 06_framework.py torch-shadowing bug that failed all B/C stages.
 # Launch: setsid bash run_round2b.sh > logs/run_round2b.log 2>&1 &
 set +e
-ROOT=/root/autodl-tmp/legal_english
+ROOT=/path/to/legal_english
 PY=/root/miniconda3/bin/python
 cd "$ROOT"
 mkdir -p logs

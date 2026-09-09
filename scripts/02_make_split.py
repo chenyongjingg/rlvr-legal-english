@@ -7,7 +7,7 @@ Input: data/corpus_v2.json   Output: data/split.json
 """
 import os, sys, json, hashlib
 
-DATA = "/root/autodl-tmp/legal_english/data"
+DATA = "/path/to/legal_english/data"
 
 def partition_bucket(sid):
     h = hashlib.md5(("legal:" + sid).encode("utf-8")).hexdigest()

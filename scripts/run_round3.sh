@@ -8,7 +8,7 @@
 #   R3_G6_full107    headline on full test set (107 src)      ~90min
 # Stage markers -> logs/round3_stage.txt ; log -> logs/run_round3.log
 set +e
-ROOT=/root/autodl-tmp/legal_english
+ROOT=/path/to/legal_english
 PY=/root/miniconda3/bin/python
 cd "$ROOT"
 mkdir -p logs

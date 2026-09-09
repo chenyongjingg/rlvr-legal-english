@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.pyc
+
+# Model weights / large binaries (never distributed in this repo)
+models/
+
+# Generated figures
+figures/*.png
+figures/*.pdf
+figures/*.html
+
+# Logs
+*.log

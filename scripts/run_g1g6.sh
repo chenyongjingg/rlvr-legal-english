@@ -1,6 +1,6 @@
 #!/bin/bash
 # Run the full G1-G6 experiment matrix sequentially. One config per log.
-cd /root/autodl-tmp/legal_english
+cd /path/to/legal_english
 P=/root/miniconda3/bin/python
 S=scripts/06_framework.py
 N=50

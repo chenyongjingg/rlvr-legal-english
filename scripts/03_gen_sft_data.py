@@ -13,8 +13,8 @@ Configurable N source snippets x 2 difficulty levels.
 import os, sys, json, argparse, random
 import torch
 
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
 
 SYSTEM = (
     "You are a legal English educator. You rewrite legal texts into clear, level-appropriate "

@@ -14,8 +14,8 @@ import torch
 import numpy as np
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
 
 SYSTEM = ("You are a legal English educator. Rewrite legal texts into clear, "
           "level-appropriate versions for language learners.")

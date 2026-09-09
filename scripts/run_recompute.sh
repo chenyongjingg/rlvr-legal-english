@@ -4,7 +4,7 @@
 # (NLI included) -> honest per-tag/per-level numbers for the paper tables.
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round7_recompute_stage.txt
 : > "$STAGE"

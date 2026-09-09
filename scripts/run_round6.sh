@@ -6,7 +6,7 @@
 #   R6_size10     10% KB scale point (completes 10/20/50/100% curve)
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round6_stage.txt
 : > "$STAGE"
@@ -65,7 +65,7 @@ run_stage abl_diff \
 # 2) external-corpus OOD: test rows = Cornell US Code (id prefix uscode_),
 #    KB = original train+val (861) via split_ext.json, full framework.
 run_stage ext \
-  env LEGAL_SPLIT_PATH=/root/autodl-tmp/legal_english/data/split_ext.json \
+  env LEGAL_SPLIT_PATH=/path/to/legal_english/data/split_ext.json \
   $PY scripts/06_framework.py --model qwen35-grpo --rag --agents \
   --tag OOD_external --src-prefix-filter uscode --n-test 50 \
   --levels beginner,intermediate --seed 7

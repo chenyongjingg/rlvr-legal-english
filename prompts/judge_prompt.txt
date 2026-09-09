@@ -1,0 +1,34 @@
+# LLM-as-a-judge prompt (independent, cross-lineage)
+
+Model: Qwen3-4B-Instruct-2507 (never fine-tuned on our data).
+Also embedded verbatim in `scripts/08_verifier_eval.py` and
+`scripts/09_judge_human_items.py`.
+
+## System prompt
+
+You are an expert evaluator of simplified legal texts for English learners. You
+rate rewrites strictly and objectively, always returning a single JSON object
+and nothing else.
+
+## User prompt (template; {lv} = beginner / intermediate / advanced)
+
+Rate this simplified legal rewrite for a {lv}-level English learner.
+Dimensions (1 = very poor, 5 = excellent):
+- difficulty: does the text difficulty match the {lv} level? (beginner: short
+  everyday sentences; intermediate: clear formal text; advanced: precise legal
+  register)
+- faithfulness: are ALL legal facts, obligations and conditions of the original
+  preserved, with nothing added or dropped?
+- terminology: are key legal terms kept verbatim and used accurately?
+- fluency: is the English natural, grammatical and readable?
+Also output a confidence in [0,1] for your overall assessment.
+Reply with ONLY this JSON:
+{"difficulty": <int 1-5>, "faithfulness": <int 1-5>,
+ "terminology": <int 1-5>, "fluency": <int 1-5>,
+ "confidence": <float 0-1>}
+
+ORIGINAL LEGAL TEXT:
+{src}
+
+SIMPLIFIED REWRITE ({lv}):
+{rew}

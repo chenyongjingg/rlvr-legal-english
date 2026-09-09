@@ -1,3 +1,4 @@
+import os
 # -*- coding: utf-8 -*-
 """
 07_eval.py — round-2 statistics (upgraded, task 23).
@@ -18,7 +19,8 @@ import scipy.stats as sp
 import numpy as np
 
 sys.stdout.reconfigure(encoding='utf-8', errors='replace')
-RD = sys.argv[1] if len(sys.argv) > 1 else r"C:\Users\33378\aigc_wechat\results\legal"
+_REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))  # repository root
+RD = sys.argv[1] if len(sys.argv) > 1 else os.path.join(_REPO, "results")
 OUT = os.path.join(RD, "stats_legal.json")
 
 CONFIG = [

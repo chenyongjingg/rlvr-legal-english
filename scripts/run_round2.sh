@@ -4,7 +4,7 @@
 # Launch:  setsid bash run_round2.sh > logs/run_round2.log 2>&1 &
 # Stage progress marker written to logs/round2_stage.txt for polling.
 set +e
-ROOT=/root/autodl-tmp/legal_english
+ROOT=/path/to/legal_english
 PY=/root/miniconda3/bin/python
 cd "$ROOT"
 mkdir -p logs

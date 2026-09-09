@@ -5,7 +5,7 @@
 # G1 is already honest (SFT emits no commentary, verified).
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round7_rerun_stage.txt
 : > "$STAGE"
@@ -39,15 +39,15 @@ run_stage() {
 
 # OOD external (US Code) under the fixed framework
 run_stage OOD_ext_fix \
-  env LEGAL_SPLIT_PATH=/root/autodl-tmp/legal_english/data/split_ext.json \
+  env LEGAL_SPLIT_PATH=/path/to/legal_english/data/split_ext.json \
   $PY scripts/06_framework.py --model qwen35-grpo --rag --agents \
   --tag OOD_ext_fix --n-test 50 --levels beginner,intermediate --seed 7 \
   --max-attempts 3 --src-prefix-filter uscode_
 
 # OOD India (case law) under the fixed framework (if corpus is ready)
-if [ -f /root/autodl-tmp/legal_english/data/split_ext_in.json ]; then
+if [ -f /path/to/legal_english/data/split_ext_in.json ]; then
   run_stage OOD_india_fix \
-    env LEGAL_SPLIT_PATH=/root/autodl-tmp/legal_english/data/split_ext_in.json \
+    env LEGAL_SPLIT_PATH=/path/to/legal_english/data/split_ext_in.json \
     $PY scripts/06_framework.py --model qwen35-grpo --rag --agents \
     --tag OOD_india_fix --n-test 50 --levels beginner,intermediate --seed 7 \
     --max-attempts 3 --src-prefix-filter in_

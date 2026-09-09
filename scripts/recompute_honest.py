@@ -26,7 +26,7 @@ import statistics
 import sys
 import time
 
-sys.path.insert(0, "/root/autodl-tmp/legal_english/scripts")
+sys.path.insert(0, "/path/to/legal_english/scripts")
 _fw = importlib.import_module("06_framework")  # module name starts with a digit
 clean_output = _fw.clean_output
 stripped_info = _fw.stripped_info
@@ -35,10 +35,10 @@ flesch = _fw.flesch
 LEVEL_TARGET_FRE = _fw.LEVEL_TARGET_FRE
 W = _fw.W
 
-DATA = "/root/autodl-tmp/legal_english/data"
-MODELS = "/root/autodl-tmp/legal_english/models"
-RESULTS = "/root/autodl-tmp/legal_english/results"
-LOGS = "/root/autodl-tmp/legal_english/logs"
+DATA = "/path/to/legal_english/data"
+MODELS = "/path/to/legal_english/models"
+RESULTS = "/path/to/legal_english/results"
+LOGS = "/path/to/legal_english/logs"
 
 # Tags to re-score (old runs; new runs L3_max3/OOD_ext_fix/OOD_india_fix are
 # already produced by the fixed framework and are excluded).

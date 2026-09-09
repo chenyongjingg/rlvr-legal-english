@@ -3,7 +3,7 @@
 # but from SFT init like the reduced-budget ablations -> clean budget-scaling test)
 set -u
 PY=/root/miniconda3/bin/python
-cd /root/autodl-tmp/legal_english || exit 1
+cd /path/to/legal_english || exit 1
 mkdir -p logs
 STAGE=logs/round5_stage.txt
 : > "$STAGE"
