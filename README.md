@@ -32,9 +32,11 @@ shared blind set with all three lenses** and asks how far the lenses agree:
   stack (readability band, terminology retention, anti-copying, NLI
   faithfulness, format). Under an honest, decontamination-aware protocol the
   framework genuinely controls text statistics: total verifiable reward **0.800**
-  (corrected framework) and monotonic Flesch separation **64.7 / 25.9 / 10.8**
-  at targets 63 / 45 / 26. This capability is real; the paper's question is
-  whether the lenses that measure it agree on which outputs are good.
+  in the two-level configuration and **0.841** over the full three-level run,
+  which separates the three target Flesch levels monotonically at
+  **67.5 / 30.3 / 20.2** against targets 63 / 45 / 26. This capability is real;
+  the paper's question is whether the lenses that measure it agree on which
+  outputs are good.
 - **The three lenses on one blind set.** 40 passages × 6 systems (the source
   text, an SFT fine-tune, Flan-T5-large, BART-large, a lexicon rewriter, and the
   full RLVR framework) were scored by (a) the automatic reward stack,
@@ -49,7 +51,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
   p = .037), even though no individual human agrees with any other. (3) The
   automatic reward stack is the outlier lens: its system ranking is uncorrelated
   with the human panel (ρ = 0.20, ns) and the judge (ρ = 0.10, ns), and it ranks
-  the RLVR framework first (automatic total reward 0.853 on the shared blind
+  the RLVR framework first (automatic total reward 0.846 on the shared blind
   set) on the same outputs that both external lenses place near the bottom.
 
 ## Repository layout
@@ -58,7 +60,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 |---|---|
 | `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.13) |
 | `human_eval/samples/` | Shared blind set: `items.jsonl` (40×6 texts + automatic scores), `unblind_key.json` (blind label → system), `rated_R1.csv` / `rated_R2.csv` / `rated_R3.csv` (anonymized human ratings) |
-| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_out/` (aggregate JSONs behind Tables 11–12) |
+| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `h1c_out/` (aggregate JSONs behind Tables 11–12) |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
 | `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), and the per-system JSONL the blind-set analysis reads |
@@ -79,12 +81,15 @@ To re-run the three-way analysis from the shipped data alone (CPU only):
 
 ```bash
 python human_eval/H1/h1c_judge_human_analysis.py
+python human_eval/H1/h1c_interrater.py
 ```
 
-This regenerates `human_eval/H1/h1c_out/h1c_verdict.json` (Table 12); the shipped
-copy should reproduce exactly. It reads the rated CSVs and `unblind_key.json`
-from `human_eval/samples/`, the judge scores from `human_eval/H1/`, and the
-automatic per-system scores from `results/`.
+The first regenerates `human_eval/H1/h1c_out/h1c_verdict.json` (Table 12), the
+second `human_eval/H1/h1c_out/h1c_interrater.json` (the mean pairwise weighted
+κ and the exact-three-way-agreement rates quoted in §4.13); both shipped copies
+reproduce exactly. They read the rated CSVs and `unblind_key.json` from
+`human_eval/samples/`, the judge scores from `human_eval/H1/`, and the automatic
+per-system scores from `results/`.
 
 ## Human-eval ethics
 

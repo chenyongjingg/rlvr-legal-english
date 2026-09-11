@@ -80,7 +80,8 @@ def main():
     human = {}
     rater_names = []
     for sf in args.scores:
-        rname = os.path.splitext(os.path.basename(sf))[0].replace("rated_", "R")
+        # "rated_R1.csv" -> "R1" ; "R1.csv" -> "R1"
+        rname = os.path.splitext(os.path.basename(sf))[0].replace("rated_", "")
         rater_names.append(rname)
         for row in csv.DictReader(open(sf, encoding="utf-8-sig")):
             item_id = row["item_id"]
