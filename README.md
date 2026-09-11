@@ -63,7 +63,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 |---|---|
 | `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.13) |
 | `human_eval/samples/` | Shared blind set: `items.jsonl` (40×6 texts + automatic scores), `unblind_key.json` (blind label → system), `rated_R1.csv` / `rated_R2.csv` / `rated_R3.csv` (anonymized human ratings) |
-| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `h1c_out/` (aggregate JSONs behind Tables 11–12) |
+| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below) |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
 | `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§4.11 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
@@ -83,6 +83,18 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 | Tables 11–12 (§4.13, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
 | Table 13 (judge on each system's own main set) | `results/h1a_mainset.json`, `results/verifier_eval.json` | `scripts/08_verifier_eval.py`, `scripts/09_judge_human_items.py` |
 | Figures 1–2 | `results/honest_table.json` | `scripts/make_framework_figure.py`, `scripts/make_results_figure.py` |
+
+**Provenance note on `h1c_means.json`.** Its `H` and `J` blocks are means over the
+shared 40-item blind set (20 passages × 2 levels × one system), and so is Table 11's
+automatic column. Its `A` block is **not** on that basis: it is the mean over each
+configuration's full set (100 rows; 150 for G6v4, read from the non-honest
+`results/G6v4.jsonl`), so it does not reproduce Table 11's automatic column — e.g.
+B2 is `faith` 0.714 and `term` 0.970 here against 0.622 and 1.000 on the blind set.
+The manuscript's Table 11 uses the blind-set basis and reports both bases side by
+side in §4.13 (shared-set / full-set total: 0.727/0.743, 0.756/0.761, 0.798/0.806,
+0.714/0.737, 0.846/0.841, the last under the honest rule). Use the per-row files in
+`results/` with `human_eval/samples/items.jsonl` as the blind-set filter to reproduce
+Table 11's automatic column; do not read it off `h1c_means.json`.
 
 To re-run the three-way analysis from the shipped data alone (CPU only):
 
