@@ -44,15 +44,18 @@ shared blind set with all three lenses** and asks how far the lenses agree:
   fine-tuned on our data), and (c) three legal-English teachers (240 blind
   judgments each).
 - **Findings.** (1) Human raters barely agree with one another (pairwise
-  weighted κ 0.02–0.11; only 4.6–10.8% exact three-way agreement), so a single
-  rater is not a stable ground truth. (2) The panel mean is nonetheless signal:
-  the judge tracks the three-rater mean on the same texts on every dimension
-  (pooled Spearman ρ 0.53–0.70, n = 200) and at system level (ρ = 0.90,
-  p = .037), even though no individual human agrees with any other. (3) The
-  automatic reward stack is the outlier lens: its system ranking is uncorrelated
-  with the human panel (ρ = 0.20, ns) and the judge (ρ = 0.10, ns), and it ranks
-  the RLVR framework first (automatic total reward 0.846 on the shared blind
-  set) on the same outputs that both external lenses place near the bottom.
+  weighted κ 0.02–0.11; only 4.6–10.8% exact three-way agreement; the three-rater
+  mean has ICC(2,3) = 0.10–0.32), so a single rater is not a stable ground truth.
+  (2) The panel mean is nonetheless signal: the judge tracks the three-rater mean
+  on the same texts on every dimension (pooled Spearman ρ 0.53–0.70, within-system
+  0.38–0.53, n = 200) and does so at least as well as the raters recover one
+  another (leave-one-out ρ 0.07–0.29). The system-level ranking (ρ = 0.90 over the
+  five generated systems) is reported as an ordering rather than a test: at n = 5
+  the exact permutation p is .083. (3) The automatic reward stack is the outlier
+  lens: its system ranking does not track the human panel (ρ = 0.20) or the judge
+  (ρ = 0.10), and it ranks the RLVR framework first (automatic total reward 0.846
+  on the shared blind set) on the same outputs that both external lenses place
+  near the bottom.
 
 ## Repository layout
 
@@ -63,7 +66,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 | `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `h1c_out/` (aggregate JSONs behind Tables 11–12) |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
-| `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), and the per-system JSONL the blind-set analysis reads |
+| `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§4.11 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
 | `scripts/` | Generator pipeline: corpus build → SFT → GRPO → framework → evaluation → honest re-scoring (`01_*.py` … `11_*.py`, `honest_table.py`, `recompute_honest.py`, `run_*.sh`) |
 | `prompts/judge_prompt.txt` | The judge system/user prompt (also embedded verbatim in `scripts/08_verifier_eval.py` and `scripts/09_judge_human_items.py`) |
 
@@ -71,8 +74,12 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 
 | Paper result | Data | Code |
 |---|---|---|
-| Table 1 (main chain G1–G6, honest totals) | `results/honest_table.json` | `scripts/honest_table.py`, `scripts/recompute_honest.py` |
-| Table 3 (OOD, two external domains) | `results/honest_table.json` (OOD tags) | `scripts/07_eval.py`, `scripts/build_external_*.py` |
+| Table 1 (main chain G1–G6, honest totals) | `results/honest_table.json`, `results/{G1..G5}_honest.jsonl`, `results/metrics_honest.json` | `scripts/honest_table.py`, `scripts/recompute_honest.py` |
+| Table 3 (OOD, two external domains) | `results/honest_table.json` (OOD tags), `results/OOD_*_honest.jsonl` | `scripts/07_eval.py`, `scripts/build_external_*.py` |
+| Table 6 (verifier probe) | `results/verifier_eval.json` (dev probe; **not** `verifier_eval_rerun.json`, see `results/README.md`) | `scripts/08_verifier_eval.py` |
+| §4.11 qualitative taxonomy counts | `results/examples_qualitative.json` (released annotation; the labels are a recorded inspection, not an FRE-band rule) | `scripts/09_qualitative_examples.py` |
+| Loop depth L1–L5 (§4.10) | `results/{L1_max1,L2_max2,L3_max3,L5_max5}.jsonl` | `scripts/06_framework.py` |
+| Table 11 automatic column (honest basis) | `results/G6v4_honest.jsonl` (the honest variant of `G6v4.jsonl`; two pure-commentary rows scored 0) | `scripts/recompute_honest.py` |
 | Tables 11–12 (§4.13, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
 | Table 13 (judge on each system's own main set) | `results/h1a_mainset.json`, `results/verifier_eval.json` | `scripts/08_verifier_eval.py`, `scripts/09_judge_human_items.py` |
 | Figures 1–2 | `results/honest_table.json` | `scripts/make_framework_figure.py`, `scripts/make_results_figure.py` |

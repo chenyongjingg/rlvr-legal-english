@@ -1,0 +1,466 @@
+{
+ "L3_max3": {
+  "counts": {
+   "good": 58,
+   "pure-meta": 4,
+   "too-hard": 25,
+   "too-easy": 13,
+   "halluc": 0,
+   "copy-src": 0
+  },
+  "levels": {
+   "beginner": {
+    "n": 50,
+    "pure%": 6.0,
+    "stripped%": 48.0,
+    "attempts": 1.58
+   },
+   "intermediate": {
+    "n": 50,
+    "pure%": 2.0,
+    "stripped%": 38.0,
+    "attempts": 1.7
+   }
+  },
+  "examples": {
+   "good": [
+    {
+     "id": "eur_044",
+     "lv": "intermediate",
+     "fre": 44.44,
+     "tot": 0.9918,
+     "contra": 0.0045,
+     "attempts": 1,
+     "src": "Article 26 Residence of members of the family in a Member State other than the one in which the pens",
+     "rew": "Article 24: Benefits in kind are not available under the legislation of a person’s country of residence if the…"
+    },
+    {
+     "id": "eur_036",
+     "lv": "beginner",
+     "fre": 65.79,
+     "tot": 0.9706,
+     "contra": 0.0019,
+     "attempts": 1,
+     "src": "The benefits in kind shall be provided by the competent institution and at its own expense, in accor",
+     "rew": "These benefits are handled by the office of the country where the person is staying, following the rules of th…"
+    }
+   ],
+   "pure-meta": [
+    {
+     "id": "eur_026",
+     "lv": "beginner",
+     "fre": 0.0,
+     "tot": 0.8851,
+     "contra": 1.0,
+     "attempts": 1,
+     "src": "The Member States shall notify the Commission of the European Communities in writing of the declarat",
+     "rew": ""
+    },
+    {
+     "id": "eur_093",
+     "lv": "intermediate",
+     "fre": 0.0,
+     "tot": 0.8992,
+     "contra": 1.0,
+     "attempts": 1,
+     "src": "Where, during the same period and for the same family members, benefits are provided for under the l",
+     "rew": ""
+    }
+   ],
+   "too-hard": [
+    {
+     "id": "eur_016",
+     "lv": "intermediate",
+     "fre": 1.05,
+     "tot": 0.7966,
+     "contra": 0.0027,
+     "attempts": 1,
+     "src": "(i) \"member of the family\" means (1) (i) any person defined or recognised as a member of the family ",
+     "rew": "In the case where a person qualifies for benefits under the laws of a Member State, the cost of those benefits…"
+    },
+    {
+     "id": "eur_006",
+     "lv": "intermediate",
+     "fre": 3.24,
+     "tot": 0.7966,
+     "contra": 0.0041,
+     "attempts": 1,
+     "src": "(18) In specific situations which justify other criteria of applicability, it is necessary to deroga",
+     "rew": "Title III: Special Provisions Concerning Specific Categories of Benefits   Chapter: Sickness, Maternity, and E…"
+    }
+   ],
+   "too-easy": [
+    {
+     "id": "eur_432",
+     "lv": "beginner",
+     "fre": 80.98,
+     "tot": 0.8157,
+     "contra": 0.0023,
+     "attempts": 3,
+     "src": "2. Authorisation procedures and formalities shall not be dissuasive and shall not unduly complicate ",
+     "rew": "The authorisation should be given as soon as officials check and find the right conditions are met.   Unless i…"
+    },
+    {
+     "id": "eur_411",
+     "lv": "beginner",
+     "fre": 79.82,
+     "tot": 0.7854,
+     "contra": 0.0566,
+     "attempts": 2,
+     "src": "In accordance with the principle of proportionality, as set out in that Article, this Directive does",
+     "rew": "Chapter VIII FINAL PROvisions   Article 44 Making Rules   1. Member States must pass the needed laws and rules…"
+    }
+   ]
+  }
+ },
+ "G5": {
+  "counts": {
+   "good": 29,
+   "pure-meta": 4,
+   "too-hard": 30,
+   "too-easy": 34,
+   "halluc": 1,
+   "copy-src": 2
+  },
+  "levels": {
+   "beginner": {
+    "n": 50,
+    "pure%": 4.0,
+    "stripped%": 12.0,
+    "attempts": 1.8
+   },
+   "intermediate": {
+    "n": 50,
+    "pure%": 4.0,
+    "stripped%": 8.0,
+    "attempts": 1.58
+   }
+  },
+  "examples": {
+   "good": [
+    {
+     "id": "eur_095",
+     "lv": "beginner",
+     "fre": 66.56,
+     "tot": 0.958,
+     "contra": 0.0095,
+     "attempts": 1,
+     "src": "However, such a differential supplement does not need to be provided for children residing in anothe",
+     "rew": "Some children get extra money if they live in a certain country. But if the money is for kids who only live th…"
+    },
+    {
+     "id": "eur_341",
+     "lv": "intermediate",
+     "fre": 47.19,
+     "tot": 0.8792,
+     "contra": 0.0079,
+     "attempts": 3,
+     "src": "2. The procedure set out in Article 15 (2) shall apply from the date of notification of this Directi",
+     "rew": "The protocol establishes Directive implementation across Member States, requiring that member states transmit …"
+    }
+   ],
+   "pure-meta": [
+    {
+     "id": "eur_055",
+     "lv": "beginner",
+     "fre": 0.0,
+     "tot": 0.0,
+     "contra": 1.0,
+     "attempts": 2,
+     "src": "Article 38 Benefits for an occupational disease where the person suffering from such a disease has b",
+     "rew": "The user wants a legal text rewritten at a beginner level. The original text provided by the user in this prom…"
+    },
+    {
+     "id": "eur_103",
+     "lv": "beginner",
+     "fre": 0.0,
+     "tot": 0.0,
+     "contra": 1.0,
+     "attempts": 3,
+     "src": "(b) collect the necessary data and carry out the calculations required for establishing the annual s",
+     "rew": "The assignment is to rewrite a legal text into a very easy level version (reading ease score about 60-65), but…"
+    }
+   ],
+   "too-hard": [
+    {
+     "id": "eur_031",
+     "lv": "intermediate",
+     "fre": 1.71,
+     "tot": 0.7968,
+     "contra": 0.0075,
+     "attempts": 1,
+     "src": "2. A person who normally pursues an activity as a self-employed person in two or more Member States ",
+     "rew": "A person who normally carries out an economic activity as a self-employed person in one Member State and then …"
+    },
+    {
+     "id": "eur_190",
+     "lv": "intermediate",
+     "fre": 3.08,
+     "tot": 0.7991,
+     "contra": 0.0016,
+     "attempts": 2,
+     "src": "(g) \"reservation\" means the fact that the passenger has a ticket, or other proof, which indicates th",
+     "rew": "This   This regulation does not apply if a package tour is cancelled due to flight cancellation, except under …"
+    }
+   ],
+   "too-easy": [
+    {
+     "id": "eur_289",
+     "lv": "beginner",
+     "fre": 99.47,
+     "tot": 0.7778,
+     "contra": 0.0257,
+     "attempts": 2,
+     "src": "4. If the contract is concluded through a means of distance communication which allows limited space",
+     "rew": "The trader must tell you about some things in rule 6, but you can say no to getting this on paper if you want.…"
+    },
+    {
+     "id": "eur_093",
+     "lv": "beginner",
+     "fre": 98.39,
+     "tot": 0.727,
+     "contra": 0.0434,
+     "attempts": 1,
+     "src": "Where, during the same period and for the same family members, benefits are provided for under the l",
+     "rew": "Some kids get money from more than one country. If they get it because they work, we use where they live to de…"
+    }
+   ],
+   "halluc": [
+    {
+     "id": "eur_411",
+     "lv": "beginner",
+     "fre": 70.94,
+     "tot": 0.7822,
+     "contra": 0.5244,
+     "attempts": 3,
+     "src": "In accordance with the principle of proportionality, as set out in that Article, this Directive does",
+     "rew": "The country must make rules to match this law by December 28, 2009. They must tell the Commission about these …"
+    }
+   ]
+  }
+ },
+ "G4": {
+  "counts": {
+   "good": 64,
+   "pure-meta": 0,
+   "too-hard": 28,
+   "too-easy": 8,
+   "halluc": 0,
+   "copy-src": 0
+  },
+  "levels": {
+   "beginner": {
+    "n": 50,
+    "pure%": 0.0,
+    "stripped%": 10.0,
+    "attempts": 1.24
+   },
+   "intermediate": {
+    "n": 50,
+    "pure%": 0.0,
+    "stripped%": 8.0,
+    "attempts": 1.22
+   }
+  },
+  "examples": {
+   "good": [
+    {
+     "id": "eur_300",
+     "lv": "intermediate",
+     "fre": 44.28,
+     "tot": 0.9903,
+     "contra": 0.0013,
+     "attempts": 1,
+     "src": "or (ii) the consumer has not expressly requested performance to begin during the withdrawal period i",
+     "rew": "Member States must not impose any additional formal requirements on the model withdrawal form beyond those lis…"
+    },
+    {
+     "id": "eur_051",
+     "lv": "beginner",
+     "fre": 62.7,
+     "tot": 0.9854,
+     "contra": 0.0115,
+     "attempts": 1,
+     "src": "Article 33 Substantial benefits in kind 1. An insured person or a member of his family who has had a",
+     "rew": "Sure! Here's a beginner-level version of the legal text, written for English learners with very simple sentenc…"
+    }
+   ],
+   "too-hard": [
+    {
+     "id": "eur_409",
+     "lv": "intermediate",
+     "fre": 1.55,
+     "tot": 0.7991,
+     "contra": 0.0006,
+     "attempts": 2,
+     "src": "(112) Cooperation between Member States requires a well-functioning electronic information system in",
+     "rew": "The Commission may adopt implementing measures to amend non-essential parts of this Chapter by adding specific…"
+    },
+    {
+     "id": "eur_016",
+     "lv": "intermediate",
+     "fre": 3.24,
+     "tot": 0.7532,
+     "contra": 0.0021,
+     "attempts": 1,
+     "src": "(i) \"member of the family\" means (1) (i) any person defined or recognised as a member of the family ",
+     "rew": "The following persons are considered family members for the purpose of sickness, maternity, or equivalent pate…"
+    }
+   ],
+   "too-easy": [
+    {
+     "id": "eur_316",
+     "lv": "beginner",
+     "fre": 79.26,
+     "tot": 0.8358,
+     "contra": 0.0026,
+     "attempts": 1,
+     "src": "66 . ( 21 ) OJ L 271, 9.10.2002, p. 16 . ANNEX I Information concerning the exercise of the right of",
+     "rew": "You have the right to cancel this contract within 14 days. You don’t need to give a reason. The 14-day period …"
+    },
+    {
+     "id": "eur_144",
+     "lv": "beginner",
+     "fre": 77.42,
+     "tot": 0.836,
+     "contra": 0.0229,
+     "attempts": 3,
+     "src": "Therefore, these matters should be excluded from the scope of this Regulation. (10) Family relations",
+     "rew": "A tort is a wrong done by one person that hurts another. It is a legal mistake that causes harm or loss. Tort …"
+    }
+   ]
+  }
+ },
+ "ADV": {
+  "counts": {
+   "good": 73,
+   "pure-meta": 1,
+   "too-hard": 51,
+   "too-easy": 20,
+   "halluc": 4,
+   "copy-src": 1
+  },
+  "levels": {
+   "beginner": {
+    "n": 50,
+    "pure%": 2.0,
+    "stripped%": 14.0,
+    "attempts": 1.0
+   },
+   "intermediate": {
+    "n": 50,
+    "pure%": 0.0,
+    "stripped%": 8.0,
+    "attempts": 1.0
+   },
+   "advanced": {
+    "n": 50,
+    "pure%": 0.0,
+    "stripped%": 8.0,
+    "attempts": 1.0
+   }
+  },
+  "examples": {
+   "good": [
+    {
+     "id": "eur_075",
+     "lv": "beginner",
+     "fre": 62.87,
+     "tot": 0.9971,
+     "contra": 0.002,
+     "attempts": 1,
+     "src": "The benefits and agreements referred to in subparagraphs (a) and (b) are listed in Annex IX. Article",
+     "rew": "The benefits and agreements mentioned in parts (a) and (b) are listed in Annex IX. Article 55: Avoiding Overla…"
+    },
+    {
+     "id": "eur_044",
+     "lv": "intermediate",
+     "fre": 45.0,
+     "tot": 0.9949,
+     "contra": 0.0091,
+     "attempts": 1,
+     "src": "Article 26 Residence of members of the family in a Member State other than the one in which the pens",
+     "rew": "Article26 of the EU’s rules on pensioners’ family members. The pensioner’s non-resident family members can rec…"
+    }
+   ],
+   "pure-meta": [
+    {
+     "id": "eur_026",
+     "lv": "beginner",
+     "fre": 0.0,
+     "tot": 0.0,
+     "contra": 1.0,
+     "attempts": 1,
+     "src": "The Member States shall notify the Commission of the European Communities in writing of the declarat",
+     "rew": "The user wants a legal text rewritten for very easy English learners (reading ease score 60-65).   The goal is…"
+    }
+   ],
+   "too-hard": [
+    {
+     "id": "eur_374",
+     "lv": "intermediate",
+     "fre": 1.53,
+     "tot": 0.7991,
+     "contra": 0.0012,
+     "attempts": 1,
+     "src": "(51) The information provided to providers and recipients of services should include, in particular,",
+     "rew": "(5) Information provided to service providers and recipients should, inter alia, include details on procedures…"
+    },
+    {
+     "id": "eur_093",
+     "lv": "intermediate",
+     "fre": 1.94,
+     "tot": 0.799,
+     "contra": 0.001,
+     "attempts": 1,
+     "src": "Where, during the same period and for the same family members, benefits are provided for under the l",
+     "rew": "If same family members receive benefits from more than one Member State under the same period, the following p…"
+    }
+   ],
+   "too-easy": [
+    {
+     "id": "eur_290",
+     "lv": "beginner",
+     "fre": 87.89,
+     "tot": 0.7742,
+     "contra": 0.0136,
+     "attempts": 1,
+     "src": "6. Where a distance contract is to be concluded by telephone, Member States may provide that the tra",
+     "rew": "6. If a business sale is made over the phone, each country can say the seller must tell the buyer they agree. …"
+    },
+    {
+     "id": "eur_093",
+     "lv": "beginner",
+     "fre": 87.63,
+     "tot": 0.7181,
+     "contra": 0.0295,
+     "attempts": 1,
+     "src": "Where, during the same period and for the same family members, benefits are provided for under the l",
+     "rew": "If the same family members get help from more than one country's laws at the same time, these laws say who get…"
+    }
+   ],
+   "halluc": [
+    {
+     "id": "eur_211",
+     "lv": "advanced",
+     "fre": -127.11,
+     "tot": 0.5735,
+     "contra": 0.8965,
+     "attempts": 1,
+     "src": "whereas, therefore, it does not appear to be necessary to subject the terms which reflect mandatory ",
+     "rew": "Whereas terms mirroring mandatory statutory obligations, regulatory requirements, and binding provisions under…"
+    },
+    {
+     "id": "eur_338",
+     "lv": "advanced",
+     "fre": 28.43,
+     "tot": 0.8273,
+     "contra": 0.54,
+     "attempts": 1,
+     "src": "The Commission shall inform the other Member States thereof. The Member State concerned shall hold t",
+     "rew": "The Commission must notify the other Member States of such matters. The Member State concerned shall place the…"
+    }
+   ]
+  }
+ }
+}
