@@ -5,7 +5,7 @@ Code and data for the paper
 > **When Automatic Rewards, an LLM Judge, and Human Raters Disagree: Evaluating
 > Difficulty-Controlled Generation of Legal-English Learning Materials**
 >
-> Yongjin Chen, Guyue Zhou
+> Yongjin Chen, Ziying Xue, Guyue Zhou
 >
 > (submitted to *Applied Intelligence*)
 
