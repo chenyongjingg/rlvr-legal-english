@@ -1,0 +1,17 @@
+# Keep LF in the working tree on every platform.
+#
+# Every blob in this repository is LF, but Git's Windows default
+# (core.autocrlf=true) rewrites LF to CRLF on checkout.  That breaks the one
+# verification a reader is asked to perform: re-run a producer and compare its
+# output with the committed aggregate.  The producers write LF, so on a stock
+# Windows clone every artifact compares as modified even though the JSON is
+# identical -- a phantom diff that reads like the release does not reproduce.
+# Pinning eol=lf makes the checkout match the blob everywhere, which is also
+# what the per-cell JSONL should be: they are data, not source for a compiler.
+*.py    text eol=lf
+*.sh    text eol=lf
+*.json  text eol=lf
+*.jsonl text eol=lf
+*.csv   text eol=lf
+*.md    text eol=lf
+*.txt   text eol=lf
