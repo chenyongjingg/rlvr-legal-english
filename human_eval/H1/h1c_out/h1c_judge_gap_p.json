@@ -1,0 +1,52 @@
+{
+ "paper (Qwen3-4B-Instruct-2507)": {
+  "status": "OK",
+  "n_passages": 20,
+  "n_nonzero_diff": 15,
+  "mean_M2": 3.525,
+  "mean_G6": 3.025,
+  "delta": 0.5,
+  "p": 0.00865040589509753,
+  "unit": "passage",
+  "cells": {
+   "M2": 40,
+   "G6": 40
+  }
+ },
+ "gemma3-27b": {
+  "status": "OK",
+  "n_passages": 20,
+  "n_nonzero_diff": 14,
+  "mean_M2": 3.4,
+  "mean_G6": 2.775,
+  "delta": 0.625,
+  "p": 0.008489928759191927,
+  "unit": "passage",
+  "cells": {
+   "M2": 40,
+   "G6": 40
+  }
+ },
+ "haiku45": {
+  "status": "OK",
+  "n_passages": 20,
+  "n_nonzero_diff": 14,
+  "mean_M2": 3.25,
+  "mean_G6": 2.625,
+  "delta": 0.625,
+  "p": 0.0272386242595645,
+  "unit": "passage",
+  "cells": {
+   "M2": 40,
+   "G6": 40
+  }
+ },
+ "dsv4flash": {
+  "status": "INSUFFICIENT-COVERAGE",
+  "cells": {
+   "M2": 5,
+   "G6": 15
+  },
+  "min_required": 30
+ }
+}

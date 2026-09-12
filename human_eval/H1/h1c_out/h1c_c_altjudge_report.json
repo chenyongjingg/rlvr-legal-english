@@ -1,0 +1,177 @@
+{
+ "judges": {
+  "Qwen3-4B-Instruct-2507 (paper's)": {
+   "pooled_rho_vs_human_difficulty": [
+    0.5359689380511595,
+    2.875457039852924e-16,
+    200
+   ],
+   "within_system_mean": 0.37467619527097235,
+   "n_systems": 5,
+   "M2_minus_G6_difficulty": 0.5
+  },
+  "dsv4flash": {
+   "pooled_rho_vs_human_difficulty": [
+    0.3784346757997809,
+    0.003122793301951546,
+    59
+   ],
+   "within_system_mean": 0.273847592010269,
+   "n_systems": 3,
+   "M2_minus_G6_difficulty": -0.5333333333333334
+  },
+  "gemma3-27b": {
+   "pooled_rho_vs_human_difficulty": [
+    0.6198470123546146,
+    1.2917217727422746e-22,
+    200
+   ],
+   "within_system_mean": 0.3105173134389014,
+   "n_systems": 5,
+   "M2_minus_G6_difficulty": 0.625
+  },
+  "haiku45": {
+   "pooled_rho_vs_human_difficulty": [
+    0.5754200761973051,
+    5.000564702833294e-19,
+    200
+   ],
+   "within_system_mean": 0.3518925974842051,
+   "n_systems": 5,
+   "M2_minus_G6_difficulty": 0.625
+  }
+ },
+ "source_cell": {
+  "Qwen3-4B-Instruct-2507 (paper's)": {
+   "source_difficulty": 3.525,
+   "source_rank_1_is_highest": 1,
+   "n_parsed_per_system": {
+    "Source": 40,
+    "B2": 40,
+    "M2": 40,
+    "FlanT5": 40,
+    "BART": 40,
+    "G6": 40
+   },
+   "rank_withheld_below_coverage": [],
+   "per_system_difficulty": {
+    "Source": 3.525,
+    "B2": 2.45,
+    "M2": 3.525,
+    "FlanT5": 3.4,
+    "BART": 3.1,
+    "G6": 3.025
+   },
+   "source_dimensions": {
+    "difficulty": 3.525,
+    "faithfulness": 4.925,
+    "terminology": 4.9,
+    "fluency": 4.325,
+    "overall": 4.41875
+   }
+  },
+  "dsv4flash": {
+   "source_difficulty": 1.0256410256410255,
+   "source_rank_1_is_highest": null,
+   "n_parsed_per_system": {
+    "Source": 39,
+    "B2": 35,
+    "M2": 5,
+    "FlanT5": 2,
+    "BART": 2,
+    "G6": 15
+   },
+   "rank_withheld_below_coverage": [
+    "BART",
+    "FlanT5",
+    "G6",
+    "M2"
+   ],
+   "per_system_difficulty": {
+    "Source": 1.0256410256410255,
+    "B2": 1.2571428571428571,
+    "M2": 1.8,
+    "FlanT5": 2.0,
+    "BART": 1.5,
+    "G6": 2.3333333333333335
+   },
+   "source_dimensions": {
+    "difficulty": 1.0256410256410255,
+    "faithfulness": 5.0,
+    "terminology": 5.0,
+    "fluency": 3.5128205128205128,
+    "overall": 3.6346153846153846
+   }
+  },
+  "gemma3-27b": {
+   "source_difficulty": 1.4,
+   "source_rank_1_is_highest": 5,
+   "n_parsed_per_system": {
+    "Source": 40,
+    "B2": 40,
+    "M2": 40,
+    "FlanT5": 40,
+    "BART": 40,
+    "G6": 40
+   },
+   "rank_withheld_below_coverage": [],
+   "per_system_difficulty": {
+    "Source": 1.4,
+    "B2": 1.275,
+    "M2": 3.4,
+    "FlanT5": 3.025,
+    "BART": 2.825,
+    "G6": 2.775
+   },
+   "source_dimensions": {
+    "difficulty": 1.4,
+    "faithfulness": 5.0,
+    "terminology": 4.15,
+    "fluency": 4.7,
+    "overall": 3.8125
+   }
+  },
+  "haiku45": {
+   "source_difficulty": 1.025,
+   "source_rank_1_is_highest": 6,
+   "n_parsed_per_system": {
+    "Source": 40,
+    "B2": 40,
+    "M2": 40,
+    "FlanT5": 40,
+    "BART": 40,
+    "G6": 40
+   },
+   "rank_withheld_below_coverage": [],
+   "per_system_difficulty": {
+    "Source": 1.025,
+    "B2": 1.725,
+    "M2": 3.25,
+    "FlanT5": 2.95,
+    "BART": 2.775,
+    "G6": 2.625
+   },
+   "source_dimensions": {
+    "difficulty": 1.025,
+    "faithfulness": 5.0,
+    "terminology": 4.925,
+    "fluency": 2.875,
+    "overall": 3.45625
+   }
+  },
+  "HUMAN panel": {
+   "source_dimensions": {
+    "difficulty": 2.125,
+    "faithfulness": 3.325,
+    "terminology": 3.2666666666666666,
+    "fluency": 3.2,
+    "overall": 2.5
+   }
+  }
+ },
+ "ordering": {
+  "human_M2": 3.3666666666666663,
+  "human_G6": 3.0083333333333333,
+  "human_gap": 0.35833333333333295
+ }
+}

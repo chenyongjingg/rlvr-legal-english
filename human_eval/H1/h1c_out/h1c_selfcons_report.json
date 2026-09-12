@@ -1,0 +1,36 @@
+{
+ "gemma3-27b": {
+  "n_cells_with_3_decodes": 240,
+  "score_agreement_pct": {
+   "difficulty": 92.91666666666667,
+   "faithfulness": 93.75,
+   "terminology": 94.58333333333333,
+   "fluency": 91.66666666666667
+  },
+  "n_score_basis": {
+   "difficulty": 240,
+   "faithfulness": 240,
+   "terminology": 240,
+   "fluency": 240
+  },
+  "text_agreement_n": 161,
+  "text_agreement_pct": 67.08333333333333
+ },
+ "haiku45": {
+  "n_cells_with_3_decodes": 240,
+  "score_agreement_pct": {
+   "difficulty": 100.0,
+   "faithfulness": 100.0,
+   "terminology": 100.0,
+   "fluency": 100.0
+  },
+  "n_score_basis": {
+   "difficulty": 240,
+   "faithfulness": 240,
+   "terminology": 240,
+   "fluency": 240
+  },
+  "text_agreement_n": 240,
+  "text_agreement_pct": 100.0
+ }
+}

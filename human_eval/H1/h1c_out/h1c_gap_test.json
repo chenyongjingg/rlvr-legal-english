@@ -1,0 +1,122 @@
+{
+ "Claude Haiku 4.5 (A: original order)": {
+  "item": {
+   "gap": 0.625,
+   "mean_G6": 2.625,
+   "mean_M2": 3.25,
+   "n": 40,
+   "n_nonzero": 21,
+   "p": 0.01265792319019419,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.625,
+   "mean_G6": 2.625,
+   "mean_M2": 3.25,
+   "n": 20,
+   "n_nonzero": 14,
+   "p": 0.0272386242595645,
+   "unit": "passage"
+  }
+ },
+ "Claude Haiku 4.5 (B: blocks reversed)": {
+  "item": {
+   "gap": 0.4249999999999998,
+   "mean_G6": 2.45,
+   "mean_M2": 2.875,
+   "n": 40,
+   "n_nonzero": 24,
+   "p": 0.04000258583274289,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.4249999999999998,
+   "mean_G6": 2.45,
+   "mean_M2": 2.875,
+   "n": 20,
+   "n_nonzero": 16,
+   "p": 0.028200000628291262,
+   "unit": "passage"
+  }
+ },
+ "Gemma-3-27B (A: original order)": {
+  "item": {
+   "gap": 0.625,
+   "mean_G6": 2.775,
+   "mean_M2": 3.4,
+   "n": 40,
+   "n_nonzero": 27,
+   "p": 0.0019376142874600248,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.625,
+   "mean_G6": 2.775,
+   "mean_M2": 3.4,
+   "n": 20,
+   "n_nonzero": 14,
+   "p": 0.008489928759191927,
+   "unit": "passage"
+  }
+ },
+ "Gemma-3-27B (B: blocks reversed)": {
+  "item": {
+   "gap": 0.1499999999999999,
+   "mean_G6": 2.875,
+   "mean_M2": 3.025,
+   "n": 40,
+   "n_nonzero": 22,
+   "p": 0.39946540785146645,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.1499999999999999,
+   "mean_G6": 2.875,
+   "mean_M2": 3.025,
+   "n": 20,
+   "n_nonzero": 15,
+   "p": 0.4437559425903518,
+   "unit": "passage"
+  }
+ },
+ "Qwen3-4B-Instruct-2507 (paper's)": {
+  "item": {
+   "gap": 0.5,
+   "mean_G6": 3.025,
+   "mean_M2": 3.525,
+   "n": 40,
+   "n_nonzero": 27,
+   "p": 0.0027078598979681785,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.5,
+   "mean_G6": 3.025,
+   "mean_M2": 3.525,
+   "n": 20,
+   "n_nonzero": 15,
+   "p": 0.00865040589509753,
+   "unit": "passage"
+  }
+ },
+ "human panel": {
+  "item": {
+   "gap": 0.35833333333333295,
+   "mean_G6": 3.0083333333333333,
+   "mean_M2": 3.3666666666666663,
+   "n": 40,
+   "n_nonzero": 31,
+   "p": 0.0034791147267742113,
+   "unit": "item"
+  },
+  "passage": {
+   "gap": 0.3583333333333343,
+   "mean_G6": 3.008333333333333,
+   "mean_M2": 3.366666666666667,
+   "n": 20,
+   "n_nonzero": 16,
+   "p": 0.0024535235244005295,
+   "unit": "passage"
+  }
+ }
+}

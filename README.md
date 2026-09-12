@@ -64,7 +64,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 |---|---|
 | `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.13) |
 | `human_eval/samples/` | Shared blind set: `items.jsonl` (40×6 texts + automatic scores), `unblind_key.json` (blind label → system), `rated_R1.csv` / `rated_R2.csv` / `rated_R3.csv` (anonymized human ratings) |
-| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `icc_reliability.py` (ICC(2,3)/ICC(3,3) of the three-rater mean, §4.13 / §5.3), `h1c_clustered_stats.py` (passage-level cluster bootstrap, design effect, §4.13 level split and difficulty-gap robustness, §3.5 / §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below) |
+| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `icc_reliability.py` (ICC(2,3)/ICC(3,3) of the three-rater mean, §4.13 / §5.3), `h1c_clustered_stats.py` (passage-level cluster bootstrap, design effect, §4.13 level split and difficulty-gap robustness, §3.5 / §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below), plus the alternate-judge and order-control set behind Table 14 / §4.5 and Table 15 / §4.6 — see "Alternate judges and the order control" below |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
 | `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§4.11 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
@@ -84,6 +84,11 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 | Tables 11–12 (§4.13, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
 | Table 13 (judge on each system's own main set) | `results/h1a_mainset.json`, `results/verifier_eval.json` | `scripts/08_verifier_eval.py`, `scripts/09_judge_human_items.py` |
 | §3.5 cluster-bootstrap intervals + design effect; §4.13 level split + difficulty-gap robustness | the same blind-set sheets as Tables 11–12 | `human_eval/H1/h1c_clustered_stats.py` |
+| Table 14 / §4.5 (three alternate judges on the same 40×6 cells) | `human_eval/H1/h1c_out/altjudge_{gemma3-27b,haiku45,dsv4flash}.jsonl` | `human_eval/H1/h1c_c_altjudge_report.py` |
+| Table 15 / §4.6 (block-order control) | `human_eval/H1/h1c_out/{altjudge,swaporder}_{gemma3-27b,haiku45}.jsonl` | `human_eval/H1/h1c_e_swap_report.py` |
+| §4.5 judge-gap p-values | the same alternate-judge sheets | `human_eval/H1/h1c_judge_gap_p.py` (and, independently, `h1c_gap_test.py`) |
+| §4.6 same-prompt stability (92.9%, 240 of 240) | `human_eval/H1/h1c_out/selfcons_{gemma3-27b,haiku45}.jsonl` | `human_eval/H1/h1c_selfcons_report.py` |
+| §4.13 rater leave-one-out ρ 0.15–0.54 | `human_eval/samples/rated_R{1,2,3}.csv` + `unblind_key.json` | `human_eval/H1/h1c_loo_sb.py` |
 | Figures 1–2 | `results/honest_table.json` | `scripts/make_framework_figure.py`, `scripts/make_results_figure.py` |
 
 **Provenance note on `h1c_means.json`.** Its `H` and `J` blocks are means over the
@@ -127,6 +132,44 @@ is the *stored* `parts.diff` sub-reward as released in the per-row files;
 recomputing it from `fre` gives the same quantity to within their 4-decimal
 rounding (Pearson 1.000000, max |delta| 2e-4), but rank statistics on the two can
 differ by ~0.01 through tie ordering, so the basis is pinned in the script.
+
+### Alternate judges and the order control (Table 14 / §4.5, Table 15 / §4.6)
+
+```bash
+python human_eval/H1/h1c_c_altjudge_report.py   # -> h1c_out/h1c_c_altjudge_report.json
+python human_eval/H1/h1c_e_swap_report.py       # -> h1c_out/h1c_e_swap_report.json
+python human_eval/H1/h1c_judge_gap_p.py         # -> h1c_out/h1c_judge_gap_p.json
+python human_eval/H1/h1c_selfcons_report.py     # -> h1c_out/h1c_selfcons_report.json
+python human_eval/H1/h1c_loo_sb.py              # -> h1c_out/h1c_loo_sb.json
+```
+
+All five read only the JSONL shipped in `human_eval/H1/h1c_out/` plus
+`human_eval/H1/human40_judge.jsonl`, need no credentials and no network, and
+reproduce the committed JSON byte-for-byte. `h1c_gap_test.py` recomputes the
+§4.5 judge-gap p-values by a second, independent route and must agree with
+`h1c_judge_gap_p.py`.
+
+**What is and is not reproducible here.** Gemma-3-27B, Claude Haiku 4.5 and
+DeepSeek-V4-Flash are hosted models reached over an HTTP API. The *calls* are not
+reproducible: they were sampled at a provider-chosen temperature, the providers
+may retire these snapshots, and re-issuing a call would not return identical
+text. The *analysis* is: every number in Table 14, Table 15 and §4.6 is a
+function of the released per-cell rows, so it recomputes exactly from this repo
+without contacting anyone. `h1c_altjudge_api.py` is shipped as the record of what
+was asked — the exact prompts, the order swap, the retry rule and the response
+parser — not as a re-runnable step. It reads its endpoint and key from
+`APIN_JUDGE_BASE` / `APIN_JUDGE_KEY` in the environment, holds no credential, and
+prints only a masked key prefix. No key is needed to reproduce any number in the
+paper.
+
+Two agreement definitions appear in §4.6 and they are not interchangeable, so
+`h1c_selfcons_report.py` prints them side by side: *score agreement* (all three
+decodes assign the same difficulty score — the 92.9% quoted against the 53.3%
+block-order figure, which is the same definition) and *text agreement* (all three
+decodes returned byte-identical output). Haiku 4.5 is 100% on both, which is why
+§4.6 voids that arm: at a sampled temperature, identical output measures the
+provider rather than the judge. Gemma-3-27B is 92.9% on scores and 67.1% on text,
+the pattern expected of a model that actually samples.
 
 ## Human-eval ethics
 

@@ -1,0 +1,90 @@
+{
+ "gemma3-27b": {
+  "n_paired": 240,
+  "per_dimension": {
+   "difficulty": {
+    "mean_A": 2.45,
+    "mean_B": 2.6458333333333335,
+    "mean_delta": 0.19583333333333333,
+    "exact_agree_pct": 53.333333333333336,
+    "rho_between_orders": 0.6671695513858616,
+    "n": 240
+   },
+   "faithfulness": {
+    "mean_A": 3.158333333333333,
+    "mean_B": 3.5,
+    "mean_delta": 0.3416666666666667,
+    "exact_agree_pct": 58.333333333333336,
+    "rho_between_orders": 0.8576202243186505,
+    "n": 240
+   },
+   "terminology": {
+    "mean_A": 2.6666666666666665,
+    "mean_B": 2.529166666666667,
+    "mean_delta": -0.1375,
+    "exact_agree_pct": 57.083333333333336,
+    "rho_between_orders": 0.752926388736995,
+    "n": 240
+   },
+   "fluency": {
+    "mean_A": 3.5083333333333333,
+    "mean_B": 3.566666666666667,
+    "mean_delta": 0.058333333333333334,
+    "exact_agree_pct": 55.833333333333336,
+    "rho_between_orders": 0.6384716861628663,
+    "n": 240
+   }
+  },
+  "source_difficulty_A": 1.4,
+  "source_difficulty_B": 2.45,
+  "source_rank_A": 5,
+  "source_rank_B": 5,
+  "M2_minus_G6_A": 0.625,
+  "M2_minus_G6_B": 0.1499999999999999,
+  "human_source_difficulty": 2.125
+ },
+ "haiku45": {
+  "n_paired": 240,
+  "per_dimension": {
+   "difficulty": {
+    "mean_A": 2.3916666666666666,
+    "mean_B": 2.379166666666667,
+    "mean_delta": -0.0125,
+    "exact_agree_pct": 61.25,
+    "rho_between_orders": 0.5885768846741667,
+    "n": 240
+   },
+   "faithfulness": {
+    "mean_A": 2.475,
+    "mean_B": 2.495833333333333,
+    "mean_delta": 0.020833333333333332,
+    "exact_agree_pct": 77.5,
+    "rho_between_orders": 0.8471957466306234,
+    "n": 240
+   },
+   "terminology": {
+    "mean_A": 2.658333333333333,
+    "mean_B": 2.9458333333333333,
+    "mean_delta": 0.2875,
+    "exact_agree_pct": 63.333333333333336,
+    "rho_between_orders": 0.7980847611611525,
+    "n": 240
+   },
+   "fluency": {
+    "mean_A": 2.470833333333333,
+    "mean_B": 2.4791666666666665,
+    "mean_delta": 0.008333333333333333,
+    "exact_agree_pct": 64.58333333333333,
+    "rho_between_orders": 0.8258129864419536,
+    "n": 240
+   }
+  },
+  "source_difficulty_A": 1.025,
+  "source_difficulty_B": 1.775,
+  "source_rank_A": 6,
+  "source_rank_B": 6,
+  "M2_minus_G6_A": 0.625,
+  "M2_minus_G6_B": 0.4249999999999998,
+  "human_source_difficulty": 2.125
+ }
+}
