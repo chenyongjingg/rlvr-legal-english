@@ -40,19 +40,28 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import h1c_loo_basis as L          # noqa: E402  (its load() finds the rated_*.csv)
 
 BASE = os.path.dirname(os.path.abspath(__file__))
-# The five config JSONLs live in the released repo's results/, two levels up from
-# this file when running inside a clone and two levels up from the paper tree
-# otherwise.  Prefer whichever exists so a fresh clone runs unmodified; the
-# absolute fallback is the working tree this was developed in.
-ROOT = os.path.normpath(os.path.join(BASE, "..", ".."))
 
 
 def results_dir():
-    for cand in (os.path.join(ROOT, "results"),
-                 r"D:\周老师\legal_english\results"):
+    """Locate results/G6v4.jsonl.
+
+    Walk up from this file so the script runs unmodified in a clone, where the
+    directory sits at the repo root.  `LEGAL_ENGLISH_RESULTS` covers running it
+    from a tree that keeps the released repo in a subdirectory.  An earlier
+    version hardcoded an absolute path, which no reader could satisfy.
+    """
+    d = BASE
+    for _ in range(4):
+        cand = os.path.join(d, "results")
         if os.path.isfile(os.path.join(cand, "G6v4.jsonl")):
             return cand
-    raise SystemExit("no results/ directory with the five config JSONLs")
+        d = os.path.dirname(d)
+    env = os.environ.get("LEGAL_ENGLISH_RESULTS", "").strip()
+    if env and os.path.isfile(os.path.join(env, "G6v4.jsonl")):
+        return env
+    raise SystemExit("no results/ directory with the five config JSONLs "
+                     "(checked %s and its parents; set LEGAL_ENGLISH_RESULTS)"
+                     % BASE)
 
 
 RES = results_dir()

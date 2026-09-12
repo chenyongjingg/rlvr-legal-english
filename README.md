@@ -62,12 +62,12 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 
 | Path | Contents |
 |---|---|
-| `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.13) |
+| `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.3) |
 | `human_eval/samples/` | Shared blind set: `items.jsonl` (40×6 texts + automatic scores), `unblind_key.json` (blind label → system), `rated_R1.csv` / `rated_R2.csv` / `rated_R3.csv` (anonymized human ratings) |
-| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `icc_reliability.py` (ICC(2,3)/ICC(3,3) of the three-rater mean, §4.13 / §5.3), `h1c_clustered_stats.py` (passage-level cluster bootstrap, design effect, §4.13 level split and difficulty-gap robustness, §3.5 / §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below), plus the alternate-judge and order-control set behind Table 14 / §4.5 and Table 15 / §4.6 — see "Alternate judges and the order control" below |
+| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.3), `icc_reliability.py` (ICC(2,3)/ICC(3,3) of the three-rater mean, §4.3 / §5.3), `h1c_clustered_stats.py` (passage-level cluster bootstrap, design effect, §4.3 level split and difficulty-gap robustness, §3.5 / §4.3), `h1c_out/` (aggregate JSONs behind Table 12 and §4.3; see the provenance note on `h1c_means.json` below), plus the alternate-judge and order-control set behind Table 14 / §4.5 and Table 15 / §4.6 — see "Alternate judges and the order control" below |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
-| `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§4.11 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
+| `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§5.12 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
 | `scripts/` | Generator pipeline: corpus build → SFT → GRPO → framework → evaluation → honest re-scoring (`01_*.py` … `11_*.py`, `honest_table.py`, `recompute_honest.py`, `run_*.sh`) |
 | `prompts/judge_prompt.txt` | The judge system/user prompt (also embedded verbatim in `scripts/08_verifier_eval.py` and `scripts/09_judge_human_items.py`) |
 
@@ -78,17 +78,17 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 | Table 1 (main chain G1–G6, honest totals) | `results/honest_table.json`, `results/{G1..G5}_honest.jsonl`, `results/metrics_honest.json` | `scripts/honest_table.py`, `scripts/recompute_honest.py` |
 | Table 3 (OOD, two external domains) | `results/honest_table.json` (OOD tags), `results/OOD_*_honest.jsonl` | `scripts/07_eval.py`, `scripts/build_external_*.py` |
 | Table 6 (verifier probe) | `results/verifier_eval.json` (dev probe; **not** `verifier_eval_rerun.json`, see `results/README.md`) | `scripts/08_verifier_eval.py` |
-| §4.11 qualitative taxonomy counts | `results/examples_qualitative.json` (released annotation; the labels are a recorded inspection, not an FRE-band rule) | `scripts/09_qualitative_examples.py` |
-| Loop depth L1–L5 (§4.10) | `results/{L1_max1,L2_max2,L3_max3,L5_max5}.jsonl` | `scripts/06_framework.py` |
+| §5.12 qualitative taxonomy counts | `results/examples_qualitative.json` (released annotation; the labels are a recorded inspection, not an FRE-band rule) | `scripts/09_qualitative_examples.py` |
+| Loop depth L1–L5 (§5.11) | `results/{L1_max1,L2_max2,L3_max3,L5_max5}.jsonl` | `scripts/06_framework.py` |
 | Table 11 automatic column (honest basis) | `results/G6v4_honest.jsonl` (the honest variant of `G6v4.jsonl`; two pure-commentary rows scored 0) | `scripts/recompute_honest.py` |
-| Tables 11–12 (§4.13, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
+| Tables 11–12 (§4.3, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
 | Table 13 (judge on each system's own main set) | `results/h1a_mainset.json`, `results/verifier_eval.json` | `scripts/08_verifier_eval.py`, `scripts/09_judge_human_items.py` |
-| §3.5 cluster-bootstrap intervals + design effect; §4.13 level split + difficulty-gap robustness | the same blind-set sheets as Tables 11–12 | `human_eval/H1/h1c_clustered_stats.py` |
+| §3.5 cluster-bootstrap intervals + design effect; §4.3 level split + difficulty-gap robustness | the same blind-set sheets as Tables 11–12 | `human_eval/H1/h1c_clustered_stats.py` |
 | Table 14 / §4.5 (three alternate judges on the same 40×6 cells) | `human_eval/H1/h1c_out/altjudge_{gemma3-27b,haiku45,dsv4flash}.jsonl` | `human_eval/H1/h1c_c_altjudge_report.py` |
 | Table 15 / §4.6 (block-order control) | `human_eval/H1/h1c_out/{altjudge,swaporder}_{gemma3-27b,haiku45}.jsonl` | `human_eval/H1/h1c_e_swap_report.py` |
 | §4.5 judge-gap p-values | the same alternate-judge sheets | `human_eval/H1/h1c_judge_gap_p.py` (and, independently, `h1c_gap_test.py`) |
 | §4.6 same-prompt stability (92.9%, 240 of 240) | `human_eval/H1/h1c_out/selfcons_{gemma3-27b,haiku45}.jsonl` | `human_eval/H1/h1c_selfcons_report.py` |
-| §4.13 rater leave-one-out ρ 0.15–0.54 | `human_eval/samples/rated_R{1,2,3}.csv` + `unblind_key.json` | `human_eval/H1/h1c_loo_sb.py` |
+| §4.3 rater leave-one-out ρ 0.15–0.54 | `human_eval/samples/rated_R{1,2,3}.csv` + `unblind_key.json` | `human_eval/H1/h1c_loo_sb.py` |
 | Figures 1–2 | `results/honest_table.json` | `scripts/make_framework_figure.py`, `scripts/make_results_figure.py` |
 
 **Provenance note on `h1c_means.json`.** Its `H` and `J` blocks are means over the
@@ -98,7 +98,7 @@ configuration's full set (100 rows; 150 for G6v4, read from the non-honest
 `results/G6v4.jsonl`), so it does not reproduce Table 11's automatic column — e.g.
 B2 is `faith` 0.714 and `term` 0.970 here against 0.622 and 1.000 on the blind set.
 The manuscript's Table 11 uses the blind-set basis and reports both bases side by
-side in §4.13 (shared-set / full-set total: 0.727/0.743, 0.756/0.761, 0.798/0.806,
+side in §4.3 (shared-set / full-set total: 0.727/0.743, 0.756/0.761, 0.798/0.806,
 0.714/0.737, 0.846/0.841, the last under the honest rule). Use the per-row files in
 `results/` with `human_eval/samples/items.jsonl` as the blind-set filter to reproduce
 Table 11's automatic column; do not read it off `h1c_means.json`.
@@ -114,11 +114,11 @@ python human_eval/H1/h1c_clustered_stats.py
 
 The first regenerates `human_eval/H1/h1c_out/h1c_verdict.json` (Table 12), the
 second `human_eval/H1/h1c_out/h1c_interrater.json` (the mean pairwise weighted
-κ and the exact-three-way-agreement rates quoted in §4.13), the third
+κ and the exact-three-way-agreement rates quoted in §4.3), the third
 `human_eval/H1/h1c_out/icc_reliability.json` (the ICC(2,3) = 0.10–0.32 figure in
 the abstract and §5.3, and the ICC(3,3) ceiling check), and the fourth
 `human_eval/H1/h1c_out/h1c_clustered_stats.json` (the passage-level
-cluster-bootstrap intervals and design effect of §3.5, and the §4.13 level split
+cluster-bootstrap intervals and design effect of §3.5, and the §4.3 level split
 and difficulty-gap robustness check); all shipped copies reproduce exactly. They
 read the rated CSVs and `unblind_key.json` from `human_eval/samples/`, the judge
 scores from `human_eval/H1/`, and the automatic per-system scores from
