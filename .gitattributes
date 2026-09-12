@@ -15,3 +15,10 @@
 *.csv   text eol=lf
 *.md    text eol=lf
 *.txt   text eol=lf
+
+# Catch-all.  The list above names the types this release is made of, but the
+# three extensionless files -- .gitattributes itself, .gitignore and LICENSE --
+# matched none of them and were in fact committed WITH CRLF, which contradicted
+# the claim made two paragraphs up.  `text=auto` keeps Git's own binary
+# detection, so the PNG figures under figures/ are still left as they are.
+*       text=auto eol=lf
