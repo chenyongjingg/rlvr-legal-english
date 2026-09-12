@@ -45,7 +45,8 @@ shared blind set with all three lenses** and asks how far the lenses agree:
   judgments each).
 - **Findings.** (1) Human raters barely agree with one another (pairwise
   weighted κ 0.02–0.11; only 4.6–10.8% exact three-way agreement; the three-rater
-  mean has ICC(2,3) = 0.10–0.32), so a single rater is not a stable ground truth.
+  mean has ICC(2,3) = 0.10–0.32 over all 240 rated cells, 0.26–0.61 over the 200
+  generated cells), so a single rater is not a stable ground truth.
   (2) The panel mean is nonetheless signal: the judge tracks the three-rater mean
   on the same texts on every dimension (pooled Spearman ρ 0.53–0.70, within-system
   0.38–0.53, n = 200) and does so at least as well as the raters recover one
@@ -63,7 +64,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 |---|---|
 | `human_eval/` | The multi-lens evaluation study (Tables 11–13, §4.13) |
 | `human_eval/samples/` | Shared blind set: `items.jsonl` (40×6 texts + automatic scores), `unblind_key.json` (blind label → system), `rated_R1.csv` / `rated_R2.csv` / `rated_R3.csv` (anonymized human ratings) |
-| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below) |
+| `human_eval/H1/` | `human40_judge.jsonl` (LLM-judge scores on the identical 40×6 texts), `h1c_judge_human_analysis.py` (three-way alignment analysis), `h1c_interrater.py` (pairwise weighted κ between the human raters, §4.13), `icc_reliability.py` (ICC(2,3)/ICC(3,3) of the three-rater mean, §4.13 / §5.3), `h1c_clustered_stats.py` (passage-level cluster bootstrap, design effect, §4.13 level split and difficulty-gap robustness, §3.5 / §4.13), `h1c_out/` (aggregate JSONs behind Table 12 and §4.13; see the provenance note on `h1c_means.json` below) |
 | `human_eval/make_human_eval_samples.py` | Builds the blind set from generator outputs (sampling + blinding) |
 | `human_eval/rubric.md` | The rating rubric shown to the human raters |
 | `results/` | Verified result artifacts: `honest_table.json` (Table 1 / ablations / OOD / loop depth), `h1a_mainset.json` + `verifier_eval.json` (judge on each system's own main set, Table 13), the honest per-row JSONL for the main chain, loop depth, ablations, OOD and seeds, `examples_qualitative.json` (§4.11 annotation), and the per-system JSONL the blind-set analysis reads. **Read `results/README.md` first** — it records which of the two `verifier_eval` files backs Table 6, and why `G6v4.jsonl` and `G6v4_honest.jsonl` differ |
@@ -82,6 +83,7 @@ shared blind set with all three lenses** and asks how far the lenses agree:
 | Table 11 automatic column (honest basis) | `results/G6v4_honest.jsonl` (the honest variant of `G6v4.jsonl`; two pure-commentary rows scored 0) | `scripts/recompute_honest.py` |
 | Tables 11–12 (§4.13, three lenses on the blind set) | `human_eval/samples/`, `human_eval/H1/human40_judge.jsonl`, `results/{B2,M2_honest,B3_flant5,B4_bart,G6v4}.jsonl` | `human_eval/H1/h1c_judge_human_analysis.py` |
 | Table 13 (judge on each system's own main set) | `results/h1a_mainset.json`, `results/verifier_eval.json` | `scripts/08_verifier_eval.py`, `scripts/09_judge_human_items.py` |
+| §3.5 cluster-bootstrap intervals + design effect; §4.13 level split + difficulty-gap robustness | the same blind-set sheets as Tables 11–12 | `human_eval/H1/h1c_clustered_stats.py` |
 | Figures 1–2 | `results/honest_table.json` | `scripts/make_framework_figure.py`, `scripts/make_results_figure.py` |
 
 **Provenance note on `h1c_means.json`.** Its `H` and `J` blocks are means over the
@@ -101,14 +103,30 @@ To re-run the three-way analysis from the shipped data alone (CPU only):
 ```bash
 python human_eval/H1/h1c_judge_human_analysis.py
 python human_eval/H1/h1c_interrater.py
+python human_eval/H1/icc_reliability.py
+python human_eval/H1/h1c_clustered_stats.py
 ```
 
 The first regenerates `human_eval/H1/h1c_out/h1c_verdict.json` (Table 12), the
 second `human_eval/H1/h1c_out/h1c_interrater.json` (the mean pairwise weighted
-κ and the exact-three-way-agreement rates quoted in §4.13); both shipped copies
-reproduce exactly. They read the rated CSVs and `unblind_key.json` from
-`human_eval/samples/`, the judge scores from `human_eval/H1/`, and the automatic
-per-system scores from `results/`.
+κ and the exact-three-way-agreement rates quoted in §4.13), the third
+`human_eval/H1/h1c_out/icc_reliability.json` (the ICC(2,3) = 0.10–0.32 figure in
+the abstract and §5.3, and the ICC(3,3) ceiling check), and the fourth
+`human_eval/H1/h1c_out/h1c_clustered_stats.json` (the passage-level
+cluster-bootstrap intervals and design effect of §3.5, and the §4.13 level split
+and difficulty-gap robustness check); all shipped copies reproduce exactly. They
+read the rated CSVs and `unblind_key.json` from `human_eval/samples/`, the judge
+scores from `human_eval/H1/`, and the automatic per-system scores from
+`results/`.
+
+The bootstrap and level-split numbers are **seed-exact**: `h1c_clustered_stats.py`
+fixes `seed = 20260911` and `B = 2000` (800 for the gap robustness check) so the
+interval endpoints are reproducible rather than one random draw, and the
+manuscript quotes the seed beside the interval. The automatic difficulty quantity
+is the *stored* `parts.diff` sub-reward as released in the per-row files;
+recomputing it from `fre` gives the same quantity to within their 4-decimal
+rounding (Pearson 1.000000, max |delta| 2e-4), but rank statistics on the two can
+differ by ~0.01 through tie ordering, so the basis is pinned in the script.
 
 ## Human-eval ethics
 

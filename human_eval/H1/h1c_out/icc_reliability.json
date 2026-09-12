@@ -1,0 +1,125 @@
+{
+ "n_all": 240,
+ "n_generated": 200,
+ "n_resamples": 2000,
+ "seed": 20260911,
+ "basis": {
+  "240_cells_all": {
+   "difficulty": {
+    "icc23": 0.0968,
+    "icc33": 0.0995,
+    "icc33_ci95": [
+     -0.0853,
+     0.2523
+    ]
+   },
+   "faithfulness": {
+    "icc23": 0.307,
+    "icc33": 0.3096,
+    "icc33_ci95": [
+     0.1155,
+     0.4618
+    ]
+   },
+   "terminology": {
+    "icc23": 0.3179,
+    "icc33": 0.4014,
+    "icc33_ci95": [
+     0.2219,
+     0.5337
+    ]
+   },
+   "fluency": {
+    "icc23": 0.1388,
+    "icc33": 0.1532,
+    "icc33_ci95": [
+     -0.0758,
+     0.331
+    ]
+   },
+   "overall": {
+    "icc23": 0.3057,
+    "icc33": 0.327,
+    "icc33_ci95": [
+     0.1556,
+     0.4584
+    ]
+   }
+  },
+  "200_cells_generated": {
+   "difficulty": {
+    "icc23": 0.26,
+    "icc33": 0.3041,
+    "icc33_ci95": [
+     0.0971,
+     0.4498
+    ]
+   },
+   "faithfulness": {
+    "icc23": 0.6073,
+    "icc33": 0.6574,
+    "icc33_ci95": [
+     0.5704,
+     0.7242
+    ]
+   },
+   "terminology": {
+    "icc23": 0.5502,
+    "icc33": 0.7068,
+    "icc33_ci95": [
+     0.6319,
+     0.7648
+    ]
+   },
+   "fluency": {
+    "icc23": 0.398,
+    "icc33": 0.5006,
+    "icc33_ci95": [
+     0.3792,
+     0.5946
+    ]
+   },
+   "overall": {
+    "icc23": 0.5164,
+    "icc33": 0.5792,
+    "icc33_ci95": [
+     0.4747,
+     0.6599
+    ]
+   }
+  }
+ },
+ "ceiling_check_200": {
+  "difficulty": {
+   "rho": 0.536,
+   "sqrt_icc23": 0.5099,
+   "sqrt_icc33": 0.5514,
+   "rho_exceeds_icc33_ceiling": false
+  },
+  "faithfulness": {
+   "rho": 0.599,
+   "sqrt_icc23": 0.7793,
+   "sqrt_icc33": 0.8108,
+   "rho_exceeds_icc33_ceiling": false
+  },
+  "terminology": {
+   "rho": 0.532,
+   "sqrt_icc23": 0.7418,
+   "sqrt_icc33": 0.8407,
+   "rho_exceeds_icc33_ceiling": false
+  },
+  "fluency": {
+   "rho": 0.699,
+   "sqrt_icc23": 0.6309,
+   "sqrt_icc33": 0.7075,
+   "rho_exceeds_icc33_ceiling": false
+  },
+  "overall": {
+   "rho": 0.685,
+   "sqrt_icc23": 0.7186,
+   "sqrt_icc33": 0.7611,
+   "rho_exceeds_icc33_ceiling": false
+  }
+ },
+ "any_exceeds_icc33": false
+}

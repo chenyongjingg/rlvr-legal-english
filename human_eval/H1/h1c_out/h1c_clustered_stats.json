@@ -1,0 +1,98 @@
+{
+ "seed": 20260911,
+ "headline_item_level": {
+  "judge_human_difficulty": {
+   "rho": 0.5359689380511595,
+   "p": 2.875457039852924e-16,
+   "n": 200
+  },
+  "human_auto_difficulty": {
+   "rho": -0.03152958948585267,
+   "p": 0.6576130814665244,
+   "n": 200
+  }
+ },
+ "headline_cluster_bootstrap": {
+  "judge_human_difficulty": {
+   "n_resamples": 2000,
+   "ci95": [
+    0.4478318675290853,
+    0.6158922109821354
+   ],
+   "frac_ci_above_zero": 1.0,
+   "frac_ci_below_zero": 0.0
+  },
+  "human_auto_difficulty": {
+   "n_resamples": 2000,
+   "ci95": [
+    -0.15694887877578206,
+    0.12250576991951055
+   ],
+   "frac_ci_above_zero": 0.3375,
+   "frac_ci_below_zero": 0.6625
+  }
+ },
+ "design_effect": {
+  "n_items": 40,
+  "m": 5,
+  "icc1": -0.04418170504044813,
+  "deff": 0.8232731798382075
+ },
+ "level_split_auto_vs_human": {
+  "beginner": {
+   "n_cells": 100,
+   "cell_level": {
+    "rho": 0.2068722059113069,
+    "p": 0.03891270393336884
+   },
+   "n_passages": 20,
+   "passage_mean": {
+    "rho": -0.00831139604296467,
+    "p": 0.9722577604766047
+   }
+  },
+  "intermediate": {
+   "n_cells": 100,
+   "cell_level": {
+    "rho": -0.21153483161753708,
+    "p": 0.034624411030256486
+   },
+   "n_passages": 20,
+   "passage_mean": {
+    "rho": -0.5092281970240732,
+    "p": 0.02183366961327034
+   }
+  }
+ },
+ "difficulty_gap": {
+  "hi": "G6",
+  "lo": "M2",
+  "n_passages": 20,
+  "human": {
+   "mean_hi": 3.0083333333333333,
+   "mean_lo": 3.366666666666667,
+   "p_item_level": 0.0034791147267742113,
+   "mean_hi_passage": 3.008333333333333,
+   "mean_lo_passage": 3.366666666666667,
+   "p_passage_level": 0.0024535235244005295,
+   "bootstrap_passage_level": {
+    "n_resamples": 800,
+    "frac_p_lt_05": 0.97375,
+    "median_p": 0.0022979205479812426
+   }
+  },
+  "judge": {
+   "mean_hi": 3.025,
+   "mean_lo": 3.525,
+   "p_item_level": 0.0027078598979681785,
+   "mean_hi_passage": 3.025,
+   "mean_lo_passage": 3.525,
+   "p_passage_level": 0.00865040589509753,
+   "bootstrap_passage_level": {
+    "n_resamples": 800,
+    "frac_p_lt_05": 0.86,
+    "median_p": 0.008077528415963844
+   }
+  }
+ }
+}
